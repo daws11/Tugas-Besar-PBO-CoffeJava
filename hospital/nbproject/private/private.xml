@@ -3,20 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Tugas%20pendahuluan/PBO/PROJECT/hospital/src/Dao/PatientDao.java</file>
-            <file>file:/D:/Tugas%20pendahuluan/PBO/PROJECT/hospital/src/View/HomeView.java</file>
-            <file>file:/D:/Tugas%20pendahuluan/PBO/PROJECT/hospital/src/model/MedicalCheckUp.java</file>
-            <file>file:/D:/Tugas%20pendahuluan/PBO/PROJECT/hospital/src/model/User.java</file>
-            <file>file:/D:/Tugas%20pendahuluan/PBO/PROJECT/hospital/src/hospital/Hospital.java</file>
-            <file>file:/D:/Tugas%20pendahuluan/PBO/PROJECT/hospital/src/database/DataBaseConnection.java</file>
-            <file>file:/D:/Tugas%20pendahuluan/PBO/PROJECT/hospital/src/model/Specialization.java</file>
-            <file>file:/D:/Tugas%20pendahuluan/PBO/PROJECT/hospital/src/model/Patient.java</file>
-            <file>file:/D:/Tugas%20pendahuluan/PBO/PROJECT/hospital/src/View/LoginPatientView.java</file>
-            <file>file:/D:/Tugas%20pendahuluan/PBO/PROJECT/hospital/src/util/PasswordUtil.java</file>
-            <file>file:/D:/Tugas%20pendahuluan/PBO/PROJECT/hospital/src/model/Room.java</file>
-            <file>file:/D:/Tugas%20pendahuluan/PBO/PROJECT/hospital/src/View/RegisterPatientView.java</file>
-            <file>file:/D:/Tugas%20pendahuluan/PBO/PROJECT/hospital/src/controller/PatientController.java</file>
-            <file>file:/D:/Tugas%20pendahuluan/PBO/PROJECT/hospital/src/model/Doctor.java</file>
+            <file>file:/D:/Kuliah/Tugas-Besar-PBO-CoffeJava/hospital/src/controller/PatientController.java</file>
+            <file>file:/D:/Kuliah/Tugas-Besar-PBO-CoffeJava/hospital/src/model/MedicalCheckUp.java</file>
+            <file>file:/D:/Kuliah/Tugas-Besar-PBO-CoffeJava/hospital/src/Dao/MedicalCheckUpDao.java</file>
+            <file>file:/D:/Kuliah/Tugas-Besar-PBO-CoffeJava/hospital/src/controller/DoctorController.java</file>
+            <file>file:/D:/Kuliah/Tugas-Besar-PBO-CoffeJava/hospital/src/controller/MedicalCheckUpController.java</file>
+            <file>file:/D:/Kuliah/Tugas-Besar-PBO-CoffeJava/hospital/src/View/DaftarMcu.java</file>
+            <file>file:/D:/Kuliah/Tugas-Besar-PBO-CoffeJava/hospital/src/Dao/PatientDao.java</file>
         </group>
     </open-files>
 </project-private>

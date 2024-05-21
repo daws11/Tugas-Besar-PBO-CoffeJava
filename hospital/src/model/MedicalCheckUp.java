@@ -15,5 +15,25 @@ public class MedicalCheckUp {
     private LocalDate date;
     private String noteMedicalCheckUp;
     
+    public MedicalCheckUp(LocalDate date, String note) {
+        this.date = date;
+        this.noteMedicalCheckUp = note;
+    }
+    
+    public LocalDate getDate() {
+        return this.date;
+    }
+    
+    public String getNote() {
+        return this.noteMedicalCheckUp;
+    }
+    
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+    
+    public void setNote(String note) {
+        this.noteMedicalCheckUp = note;
+    }
     
 }
