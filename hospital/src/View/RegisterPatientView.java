@@ -140,8 +140,18 @@ public class RegisterPatientView extends JFrame {
                     } else {
                         JOptionPane.showMessageDialog(null, "Registration failed!");
                     }
-                } catch (SQLException | NoSuchAlgorithmException ex) {
-                    ex.printStackTrace();
+                } catch (SQLException   ex) {
+                    String errorMessage = ex.getMessage();
+                    if (errorMessage.contains("Duplicate entry") && errorMessage.contains("for key 'Email'")) {
+                        JOptionPane.showMessageDialog(null, "Email sudah digunakan oleh pengguna lain.", "Registration Error", JOptionPane.ERROR_MESSAGE);
+                    } else if (errorMessage.contains("Duplicate entry") && errorMessage.contains("for key 'PhoneNumber'")) {
+                        JOptionPane.showMessageDialog(null, "Nomor telepon sudah digunakan oleh pengguna lain.", "Registration Error", JOptionPane.ERROR_MESSAGE);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "An error occurred: " + ex.getMessage(), "Registration Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                } catch (NoSuchAlgorithmException exc){
+                     JOptionPane.showMessageDialog(null, "An error occurred: " + exc.getMessage(), "Registration Error", JOptionPane.ERROR_MESSAGE);
+                    
                 }
             }
         });
