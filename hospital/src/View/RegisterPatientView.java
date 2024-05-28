@@ -140,9 +140,9 @@ public class RegisterPatientView extends JFrame {
                     } 
                 } catch (SQLException   ex) {
                     String errorMessage = ex.getMessage();
-                    if (errorMessage.contains("Duplicate entry") && errorMessage.contains("for key 'Email'")) {
+                    if (errorMessage.contains(emailField.getText()) ) {
                         JOptionPane.showMessageDialog(null, "Email sudah digunakan oleh pengguna lain.", "Registration Error", JOptionPane.ERROR_MESSAGE);
-                    } else if (errorMessage.contains("Duplicate entry") && errorMessage.contains("for key 'PhoneNumber'")) {
+                    } else if (errorMessage.contains(phoneNumberField.getText()) ) {
                         JOptionPane.showMessageDialog(null, "Nomor telepon sudah digunakan oleh pengguna lain.", "Registration Error", JOptionPane.ERROR_MESSAGE);
                     } else {
                         JOptionPane.showMessageDialog(null, "An error occurred: " + ex.getMessage(), "Registration Error", JOptionPane.ERROR_MESSAGE);
