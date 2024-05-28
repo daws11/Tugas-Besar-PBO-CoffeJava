@@ -137,9 +137,7 @@ public class RegisterPatientView extends JFrame {
                         JOptionPane.showMessageDialog(null, "Registration successful!");
                         new LoginPatientView(patientController).setVisible(true);
                         dispose();
-                    } else {
-                        JOptionPane.showMessageDialog(null, "Registration failed!");
-                    }
+                    } 
                 } catch (SQLException   ex) {
                     String errorMessage = ex.getMessage();
                     if (errorMessage.contains("Duplicate entry") && errorMessage.contains("for key 'Email'")) {

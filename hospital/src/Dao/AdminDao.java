@@ -35,22 +35,14 @@ public class AdminDao {
                     String phoneNumber = resultSet.getString("PhoneNumber");
 
                     return new Admin(adminId, firstName, LastName, email, phoneNumber, password, salt);
-                } else {
-                    System.out.println("wrong password");
-                }
-            } else {
-                System.out.println("email not found");
-            }
-        }catch(SQLException|NoSuchAlgorithmException e){
-            System.out.println(e.getMessage());
-        } catch (Exception ex){
-            System.out.println(ex.getMessage());
+                } 
+            } 
         }
         return null;
     }
     
-    public boolean addAdmin(Admin admin){
-         String query = "INSERT INTO patients (FirstName, LastName, Email, PhoneNumber, Password, Salt) VALUES (?, ?, ?, ?, ?, ?)"; 
+    public boolean addAdmin(Admin admin) throws SQLException{
+         String query = "INSERT INTO admins (FirstName, LastName, Email, PhoneNumber, Password, Salt) VALUES (?, ?, ?, ?, ?, ?)"; 
          try (Connection connection = DataBaseConnection.getConnection(); PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setString(1, admin.getFirstName());
             statement.setString(2, admin.getLastName());
@@ -62,12 +54,8 @@ public class AdminDao {
             
 
             return statement.executeUpdate() > 0;
-        } catch (SQLException e){
-            System.out.println(e.getMessage());
-        } catch (Exception e){
-            System.out.println(e.getMessage());
-        }
-        return false;
+        }  
+        
     }
     
     //add doctor
