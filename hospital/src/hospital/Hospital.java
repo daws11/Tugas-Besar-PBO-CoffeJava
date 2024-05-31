@@ -28,8 +28,16 @@ public class Hospital {
     public static void main(String[] args) throws NoSuchAlgorithmException {
         PatientController patientController = new PatientController();
         DoctorController doctorController = new DoctorController();
+<<<<<<< Updated upstream
         //LoginPatientView loginPatientView = new LoginPatientView(patientController);
         //loginPatientView.setVisible(true);
+=======
+        
+        //RegisterPatientView registerPatientView =new RegisterPatientView(patientController);
+        //LoginPatientView loginPatientView = new LoginPatientView(patientController);
+        //loginPatientView.setVisible(true);
+        //registerPatientView.setVisible(true);
+>>>>>>> Stashed changes
         
         LoginDoctorView loginDoctorView =  new LoginDoctorView();
         loginDoctorView.setVisible(true);
