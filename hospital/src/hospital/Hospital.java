@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package hospital;
-import View.LoginPatientView;
 import controller.DoctorController;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -29,10 +28,8 @@ public class Hospital {
         PatientController patientController = new PatientController();
         DoctorController doctorController = new DoctorController();
         
-        RegisterPatientView registerPatientView =new RegisterPatientView(patientController);
         //LoginPatientView loginPatientView = new LoginPatientView(patientController);
         //loginPatientView.setVisible(true);
-        registerPatientView.setVisible(true);
         
         //LoginDoctorView loginDoctorView =  new LoginDoctorView();
         //loginDoctorView.setVisible(true);
