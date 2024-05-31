@@ -28,11 +28,14 @@ public class Hospital {
     public static void main(String[] args) throws NoSuchAlgorithmException {
         PatientController patientController = new PatientController();
         DoctorController doctorController = new DoctorController();
+        
+        RegisterPatientView registerPatientView =new RegisterPatientView(patientController);
         //LoginPatientView loginPatientView = new LoginPatientView(patientController);
         //loginPatientView.setVisible(true);
+        registerPatientView.setVisible(true);
         
-        LoginDoctorView loginDoctorView =  new LoginDoctorView();
-        loginDoctorView.setVisible(true);
+        //LoginDoctorView loginDoctorView =  new LoginDoctorView();
+        //loginDoctorView.setVisible(true);
         //String password = "y8YKzJJBkmmm4H3ctRkwGRnIxgI4znjVAe/C6y/7MaW+WwXu9IFhtn40LvHQmiZqp2/Hnm7cvturmxtfS/7reA==";
         //String salt = "IqBt6cBEpPV0WMG3BI5nvg==";
         //String hashPassword = PasswordUtil.hashPassword(password, salt);

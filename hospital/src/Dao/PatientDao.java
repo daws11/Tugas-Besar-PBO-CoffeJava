@@ -14,6 +14,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.security.NoSuchAlgorithmException;
 import DaoInterface.IDaopatient;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -40,6 +41,7 @@ public class PatientDao implements IDaopatient {
 
             return statement.executeUpdate() > 0;
         }
+        
     }
 
     public Patient loginPatient(String email, String password) throws SQLException, NoSuchAlgorithmException {
@@ -68,7 +70,7 @@ public class PatientDao implements IDaopatient {
                     );
                 }
             }
-        }
+        } 
         return null;
     }
 }

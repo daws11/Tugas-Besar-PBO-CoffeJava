@@ -55,19 +55,9 @@ public class DoctorDao implements IDaoDoctor {
                     System.out.println(specialization.getSpecializationId());
                     
                     return new Doctor(doctorId,address,birthDate,specialization,firstName,lastName,email,phoneNumber,password,salt);
-                } else {
-                    System.out.println("Invalid password");
-                   
-                }
-            } else {
-                System.out.println("Doctor not found with email: " + email);
-            }
-        } catch (SQLException | NoSuchAlgorithmException e) {
-            System.out.println(e.getMessage());
-            
-        } catch (Exception ex) {
-            System.out.println(ex.getMessage());
-            }
+                } 
+            } 
+        } 
         
         return null; 
     }
