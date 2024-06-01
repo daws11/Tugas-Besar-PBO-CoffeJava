@@ -49,7 +49,7 @@ public class DoctorDao implements IDaoDoctor {
                     String lastName = resultSet.getString("lastName");
                     String phoneNumber = resultSet.getString("phoneNumber");
 
-                    Specialization specialization = SpecializationDao.getSpecializationById(specializationId);
+                    Specialization specialization = new Specialization();
                     System.out.println(specialization.getName());
                     System.out.println(specialization.getDescription());
                     System.out.println(specialization.getSpecializationId());
