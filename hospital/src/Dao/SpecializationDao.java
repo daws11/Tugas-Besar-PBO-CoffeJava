@@ -19,6 +19,7 @@ public class SpecializationDao implements IDaoSpecialization{
     private final String update = "UPDATE specializations set Name=?, Description=?, WHERE SpecializationId=?; ";
     private final String delete = "DELETE FROM specializations where SpecializationId=?; ";
     private final String select = "SELECT * FROM specializations;";
+    private final String selectbyId = "SELECT * FROM specializations WHERE SpecializationId=?";
     
     public SpecializationDao() {
         connection = (Connection) DataBaseConnection.getConnection();
@@ -92,5 +93,38 @@ public class SpecializationDao implements IDaoSpecialization{
         return list_Specializations;
     }
     
+    public Specialization getSpecializationbyId(int specializationId) {
+    try {
+        PreparedStatement preparedStatement = connection.prepareStatement(selectbyId);
+        preparedStatement.setInt(1, specializationId);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        
+        if (resultSet.next()) {
+            int SpecializationId = resultSet.getInt("SpecializationId");
+            String name = resultSet.getString("Name");
+            String description = resultSet.getString("Description");
+            Specialization specialization = new Specialization();
+            specialization.setSpecializationId(SpecializationId);
+            specialization.setName(name);
+            specialization.setDescription(description);
+            
+            
+            preparedStatement.close();
+            resultSet.close();
+            
+            return specialization;
+        } else {
+         
+            preparedStatement.close();
+            resultSet.close();
+            
+            return null; 
+        }
+    } catch (SQLException e) {
+        System.out.println(e.getMessage());
+        return null; 
+    }
+}
+
     
 }

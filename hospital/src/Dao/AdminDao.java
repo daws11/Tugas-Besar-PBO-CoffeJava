@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 import model.Admin;
 import util.PasswordUtil;
 
@@ -35,9 +36,16 @@ public class AdminDao {
                     String phoneNumber = resultSet.getString("PhoneNumber");
 
                     return new Admin(adminId, firstName, LastName, email, phoneNumber, password, salt);
-                } 
-            } 
-        }
+                } else {
+                    JOptionPane.showMessageDialog(null, "wrong password");
+                    
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "email not found");
+            }
+            
+            connection.close();
+        } 
         return null;
     }
     

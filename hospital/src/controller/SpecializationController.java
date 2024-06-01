@@ -17,11 +17,17 @@ public class SpecializationController {
     SpecializationGUI frame_specialization;
     IDaoSpecialization implement_Specialization;
     List<Specialization> list_Specializations;
+    SpecializationDao specializationDao;
+    
 
     public SpecializationController(SpecializationGUI frame_specialization) {
         this.frame_specialization = frame_specialization;
         implement_Specialization = new SpecializationDao();
         list_Specializations = implement_Specialization.getSpecializations();
+        
+    }
+    public SpecializationController(){
+        this.specializationDao = new SpecializationDao();
     }
     
     //Tombol Reset
@@ -85,6 +91,10 @@ public class SpecializationController {
         } else {
             JOptionPane.showMessageDialog(null, "Silahkan Pilih Data Yang Akan Di Hapus");
         }
+    }
+    
+    public Specialization getSpecializationById(int id){
+        return specializationDao.getSpecializationbyId(id);
     }
     
 }

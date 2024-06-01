@@ -68,8 +68,13 @@ public class PatientDao implements IDaopatient {
                             storedPassword,
                             salt
                     );
+                } else {
+                     JOptionPane.showMessageDialog(null, "wrong password");
                 }
+            }else{
+                 JOptionPane.showMessageDialog(null, "email not found");
             }
+            connection.close();
         } 
         return null;
     }
