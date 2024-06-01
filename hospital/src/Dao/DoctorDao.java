@@ -31,17 +31,16 @@ public class DoctorDao implements IDaoDoctor {
     @Override
     public Doctor loginDoctor(String email, String password) throws SQLException, NoSuchAlgorithmException {
         String query = "SELECT * FROM doctors WHERE email = ?";
-        
-        try (Connection connection = DataBaseConnection.getConnection(); 
-             PreparedStatement statement = connection.prepareStatement(query)) {
-            
+
+        try (Connection connection = DataBaseConnection.getConnection(); PreparedStatement statement = connection.prepareStatement(query)) {
+
             statement.setString(1, email);
             ResultSet resultSet = statement.executeQuery();
-            
+
             if (resultSet.next()) {
                 String storedPassword = resultSet.getString("password");
                 String salt = resultSet.getString("salt");
-                
+
                 if (storedPassword.equals(PasswordUtil.hashPassword(password, salt))) {
                     int doctorId = resultSet.getInt("doctorId");
                     String address = resultSet.getString("Address");
@@ -50,23 +49,21 @@ public class DoctorDao implements IDaoDoctor {
                     String firstName = resultSet.getString("firstName");
                     String lastName = resultSet.getString("lastName");
                     String phoneNumber = resultSet.getString("phoneNumber");
-int SpecializationId = resultSet.getInt("SpecializationId");
+                    int SpecializationId = resultSet.getInt("SpecializationId");
                     SpecializationController specializationController = new SpecializationController();
                     Specialization specialization = specializationController.getSpecializationById(SpecializationId);
-                   
-                    
-                    
-                    return new Doctor(doctorId,address,birthDate,specialization,firstName,lastName,email,phoneNumber,password,salt);
+
+                    return new Doctor(doctorId, address, birthDate, specialization, firstName, lastName, email, phoneNumber, password, salt);
                 } else {
-                     JOptionPane.showMessageDialog(null, "wrong password");
+                    JOptionPane.showMessageDialog(null, "wrong password");
                 }
             } else {
-                 JOptionPane.showMessageDialog(null, "email not found");
+                JOptionPane.showMessageDialog(null, "email not found");
             }
             connection.close();
-        } 
-        
-        return null; 
+        }
+
+        return null;
     }
 
 }
