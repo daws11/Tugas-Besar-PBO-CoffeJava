@@ -9,17 +9,12 @@ package model;
  * @author kevin
  */
 public class Specialization {
-    private String specializationId;
+    private Integer specializationId;
     private String name;
     private String description;
 
-    public Specialization(String specializationId, String name, String description) {
-        this.specializationId = specializationId;
-        this.name = name;
-        this.description = description;
-    }
-
-    public String getSpecializationId() {
+    
+    public Integer getSpecializationId() {
         return specializationId;
     }
 
@@ -31,7 +26,7 @@ public class Specialization {
         return description;
     }
 
-    public void setSpecializationId(String specializationId) {
+    public void setSpecializationId(Integer specializationId) {
         this.specializationId = specializationId;
     }
 

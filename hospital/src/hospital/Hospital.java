@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package hospital;
+
 import controller.DoctorController;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,8 +12,9 @@ import database.DataBaseConnection;
 import java.sql.SQLException;
 import controller.PatientController;
 import java.security.NoSuchAlgorithmException;
-import view.*;
+
 import util.PasswordUtil;
+import view.SpecializationGUI;
 
 
 /**
@@ -25,11 +27,16 @@ public class Hospital {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws NoSuchAlgorithmException {
-        PatientController patientController = new PatientController();
-        DoctorController doctorController = new DoctorController();
+
+        new SpecializationGUI().setVisible(true);
         
+        //PatientController patientController = new PatientController();
+        //DoctorController doctorController = new DoctorController();
+
+        //RegisterPatientView registerPatientView =new RegisterPatientView(patientController);
         //LoginPatientView loginPatientView = new LoginPatientView(patientController);
         //loginPatientView.setVisible(true);
+        //registerPatientView.setVisible(true);
         
         //LoginDoctorView loginDoctorView =  new LoginDoctorView();
         //loginDoctorView.setVisible(true);
