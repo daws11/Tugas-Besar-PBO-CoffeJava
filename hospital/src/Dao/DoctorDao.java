@@ -64,8 +64,7 @@ int SpecializationId = resultSet.getInt("SpecializationId");
                  JOptionPane.showMessageDialog(null, "email not found");
             }
             connection.close();
-        } 
-        
+        }         
         return null; 
     }
 
