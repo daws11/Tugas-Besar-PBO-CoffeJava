@@ -58,7 +58,6 @@ public class DoctorDao implements IDaoDoctor {
                 } 
             } 
         } 
-        
         return null; 
     }
     
