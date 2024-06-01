@@ -4,17 +4,39 @@
  */
 package View;
 
+import java.sql.*;
+import javax.swing.DefaultListModel;
+import controller.*;
+
 /**
  *
  * @author adria
  */
 public class DoctorMenu extends javax.swing.JFrame {
 
+    private DefaultListModel ListPatient = new DefaultListModel();
+
     /**
      * Creates new form DoctorMenu
      */
+
+    public void printAllData() {
+        ResultSet doctor = new DoctorController().viewAllPatients();
+        try {
+            while (doctor.next()) {
+                System.out.println(doctor.getString("FirstName"));
+                ListPatient.addElement(doctor.getString("FirstName"));
+            }
+            jList2.setModel(ListPatient);
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+    }
+
     public DoctorMenu() {
         initComponents();
+        printAllData();
     }
 
     /**

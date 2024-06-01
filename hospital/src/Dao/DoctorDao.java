@@ -61,5 +61,33 @@ public class DoctorDao implements IDaoDoctor {
         
         return null; 
     }
+    
+    @Override
+    public ResultSet viewAllPatients() {
+        String query = "SELECT * FROM patients";
+        try {
+            Connection connection = DataBaseConnection.getConnection();
+            PreparedStatement statement = connection.prepareStatement(query);
+            ResultSet resultSet = statement.executeQuery();
+            return resultSet;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            return null;
+        } 
+    }
+    
+    @Override
+    public ResultSet viewDetailPatient(String name) {
+        String query = "SELECT * FROM patients WHERE FirstName='"+ name +"'";
+        try {
+            Connection connection = DataBaseConnection.getConnection();
+            PreparedStatement statement = connection.prepareStatement(query);
+            ResultSet resultSet = statement.executeQuery();
+            return resultSet;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    } 
 
 }

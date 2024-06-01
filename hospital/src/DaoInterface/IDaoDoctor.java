@@ -5,15 +5,15 @@
 package DaoInterface;
 
 import java.security.NoSuchAlgorithmException;
-import java.sql.SQLException;
+import java.sql.*;
 import model.Doctor;
-import model.Patient;
 
 /**
  *
  * @author kevin
  */
 public interface IDaoDoctor {
-    
     public Doctor loginDoctor(String email, String password) throws SQLException, NoSuchAlgorithmException;
+    public ResultSet viewAllPatients();
+    public ResultSet viewDetailPatient(String name);
 }
