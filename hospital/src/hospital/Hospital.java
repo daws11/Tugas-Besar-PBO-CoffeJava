@@ -3,12 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package hospital;
-<<<<<<< HEAD
 import controller.DoctorController;
+import controller.PatientController;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.DriverManager;
-=======
->>>>>>> fbe6268f481857bb458c7a631dd5d4f418a60e04
+
 
 
 
@@ -21,7 +21,6 @@ public class Hospital {
     /**
      * @param args the command line arguments
      */
-<<<<<<< HEAD
     public static void main(String[] args) throws NoSuchAlgorithmException {
         PatientController patientController = new PatientController();
         DoctorController doctorController = new DoctorController();
@@ -39,12 +38,5 @@ public class Hospital {
         //System.out.println(hashPassword);
         
         //System.out.println(PasswordUtil.comparePassword(password, hashPassword, salt));
-=======
-    public static void main(String[] args) {
->>>>>>> fbe6268f481857bb458c7a631dd5d4f418a60e04
-        
-        
-        
     }
-    
 }
