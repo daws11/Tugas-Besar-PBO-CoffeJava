@@ -3,18 +3,6 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/rinda/Documents/Tugas-Besar-PBO-CoffeJava/hospital/src/Dao/SpecializationDao.java</file>
-            <file>file:/C:/Users/rinda/Documents/Tugas-Besar-PBO-CoffeJava/hospital/src/model/Specialization.java</file>
-            <file>file:/C:/Users/rinda/Documents/Tugas-Besar-PBO-CoffeJava/hospital/src/Dao/AdminDao.java</file>
-            <file>file:/C:/Users/rinda/Documents/Tugas-Besar-PBO-CoffeJava/hospital/src/controller/PatientController.java</file>
-            <file>file:/C:/Users/rinda/Documents/Tugas-Besar-PBO-CoffeJava/hospital/src/controller/DoctorController.java</file>
-            <file>file:/C:/Users/rinda/Documents/Tugas-Besar-PBO-CoffeJava/hospital/src/Dao/DoctorDao.java</file>
-            <file>file:/C:/Users/rinda/Documents/Tugas-Besar-PBO-CoffeJava/hospital/src/DaoInterface/IDaoDoctor.java</file>
-            <file>file:/C:/Users/rinda/Documents/Tugas-Besar-PBO-CoffeJava/hospital/src/DaoInterface/IDaopatient.java</file>
-            <file>file:/C:/Users/rinda/Documents/Tugas-Besar-PBO-CoffeJava/hospital/src/hospital/Hospital.java</file>
-            <file>file:/C:/Users/rinda/Documents/Tugas-Besar-PBO-CoffeJava/hospital/src/database/DataBaseConnection.java</file>
-        </group>
-        <group>
             <file>file:/D:/Programming/Project/Kuliah/OOP/TUBES/Proggress%237/Tugas-Besar-PBO-CoffeJava/hospital/src/Dao/AdminDao.java</file>
             <file>file:/D:/Programming/Project/Kuliah/OOP/TUBES/Proggress%237/Tugas-Besar-PBO-CoffeJava/hospital/src/View/DoctorSchedule.java</file>
             <file>file:/D:/Programming/Project/Kuliah/OOP/TUBES/Proggress%237/Tugas-Besar-PBO-CoffeJava/hospital/src/database/DataBaseConnection.java</file>
@@ -23,6 +11,30 @@
             <file>file:/D:/Programming/Project/Kuliah/OOP/TUBES/Proggress%237/Tugas-Besar-PBO-CoffeJava/hospital/src/Dao/DoctorDao.java</file>
             <file>file:/D:/Programming/Project/Kuliah/OOP/TUBES/Proggress%237/Tugas-Besar-PBO-CoffeJava/hospital/src/View/MySchedule.java</file>
             <file>file:/D:/Programming/Project/Kuliah/OOP/TUBES/Proggress%237/Tugas-Besar-PBO-CoffeJava/hospital/src/View/Schedule.java</file>
+        </group>
+        <group>
+            <file>file:/D:/Programming/Project/Kuliah/OOP/TUBES/Proggress%2310/Tugas-Besar-PBO-CoffeJava/hospital/src/View/MyAppointment.java</file>
+            <file>file:/D:/Programming/Project/Kuliah/OOP/TUBES/Proggress%2310/Tugas-Besar-PBO-CoffeJava/hospital/src/View/WelcomePage.java</file>
+            <file>file:/D:/Programming/Project/Kuliah/OOP/TUBES/Proggress%2310/Tugas-Besar-PBO-CoffeJava/hospital/src/View/Appointment.java</file>
+            <file>file:/D:/Programming/Project/Kuliah/OOP/TUBES/Proggress%2310/Tugas-Besar-PBO-CoffeJava/hospital/src/controller/AppointmentController.java</file>
+            <file>file:/D:/Programming/Project/Kuliah/OOP/TUBES/Proggress%2310/Tugas-Besar-PBO-CoffeJava/hospital/src/controller/DoctorAppointmentController.java</file>
+            <file>file:/D:/Programming/Project/Kuliah/OOP/TUBES/Proggress%2310/Tugas-Besar-PBO-CoffeJava/hospital/src/model/MyAppointment.java</file>
+            <file>file:/D:/Programming/Project/Kuliah/OOP/TUBES/Proggress%2310/Tugas-Besar-PBO-CoffeJava/hospital/src/model/Room.java</file>
+            <file>file:/D:/Programming/Project/Kuliah/OOP/TUBES/Proggress%2310/Tugas-Besar-PBO-CoffeJava/hospital/src/controller/MyPracticesController.java</file>
+            <file>file:/D:/Programming/Project/Kuliah/OOP/TUBES/Proggress%2310/Tugas-Besar-PBO-CoffeJava/hospital/src/View/MyPractices.java</file>
+            <file>file:/D:/Programming/Project/Kuliah/OOP/TUBES/Proggress%2310/Tugas-Besar-PBO-CoffeJava/hospital/src/model/Appointment.java</file>
+            <file>file:/D:/Programming/Project/Kuliah/OOP/TUBES/Proggress%2310/Tugas-Besar-PBO-CoffeJava/hospital/src/controller/MyAppointmentController.java</file>
+            <file>file:/D:/Programming/Project/Kuliah/OOP/TUBES/Proggress%2310/Tugas-Besar-PBO-CoffeJava/hospital/src/View/Register.java</file>
+            <file>file:/D:/Programming/Project/Kuliah/OOP/TUBES/Proggress%2310/Tugas-Besar-PBO-CoffeJava/hospital/src/DaoInterface/IDaoAppointment.java</file>
+            <file>file:/D:/Programming/Project/Kuliah/OOP/TUBES/Proggress%2310/Tugas-Besar-PBO-CoffeJava/hospital/src/Dao/MyPracticesDao.java</file>
+            <file>file:/D:/Programming/Project/Kuliah/OOP/TUBES/Proggress%2310/Tugas-Besar-PBO-CoffeJava/hospital/src/DaoInterface/IDaoMyAppointment.java</file>
+            <file>file:/D:/Programming/Project/Kuliah/OOP/TUBES/Proggress%2310/Tugas-Besar-PBO-CoffeJava/hospital/src/Dao/MyAppointmentDao.java</file>
+            <file>file:/D:/Programming/Project/Kuliah/OOP/TUBES/Proggress%2310/Tugas-Besar-PBO-CoffeJava/hospital/src/Dao/AppointmentDao.java</file>
+            <file>file:/D:/Programming/Project/Kuliah/OOP/TUBES/Proggress%2310/Tugas-Besar-PBO-CoffeJava/hospital/src/Dao/DoctorScheduleDao.java</file>
+            <file>file:/D:/Programming/Project/Kuliah/OOP/TUBES/Proggress%2310/Tugas-Besar-PBO-CoffeJava/hospital/src/View/DoctorAppointment.java</file>
+            <file>file:/D:/Programming/Project/Kuliah/OOP/TUBES/Proggress%2310/Tugas-Besar-PBO-CoffeJava/hospital/src/View/SpecializationGUI.java</file>
+            <file>file:/D:/Programming/Project/Kuliah/OOP/TUBES/Proggress%2310/Tugas-Besar-PBO-CoffeJava/hospital/src/DaoInterface/IDaoMyPractices.java</file>
+            <file>file:/D:/Programming/Project/Kuliah/OOP/TUBES/Proggress%2310/Tugas-Besar-PBO-CoffeJava/hospital/src/DaoInterface/IDaoDoctorAppointment.java</file>
         </group>
     </open-files>
 </project-private>
