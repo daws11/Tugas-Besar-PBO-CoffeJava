@@ -4,6 +4,10 @@
  */
 package View;
 
+import controller.DoctorController;
+import java.sql.SQLException;
+import model.Doctor;
+
 /**
  *
  * @author kevin
@@ -166,7 +170,19 @@ public class WelcomePage extends javax.swing.JFrame {
     }//GEN-LAST:event_jPasswordField1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        try {
+            Doctor login = new DoctorController().login(jTextField1.getText(), jPasswordField1.getText());
+            if(login != null) {
+                this.setVisible(false);
+                new DoctorMenu(login).setVisible(true);
+            } else {
+                System.out.println("failed");
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked

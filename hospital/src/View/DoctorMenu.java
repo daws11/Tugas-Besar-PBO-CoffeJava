@@ -11,6 +11,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+import model.Doctor;
 
 /**
  *
@@ -19,6 +20,9 @@ import javax.swing.event.ListSelectionListener;
 public class DoctorMenu extends javax.swing.JFrame {
 
     private DefaultListModel ListPatient = new DefaultListModel();
+    private DefaultListModel listPatientDoctor = new DefaultListModel();
+    private Doctor Identity = null;
+    private int patient_id;
 
     /**
      * Creates new form DoctorMenu
@@ -27,7 +31,6 @@ public class DoctorMenu extends javax.swing.JFrame {
         ResultSet doctor = new DoctorController().viewAllPatients();
         try {
             while (doctor.next()) {
-                System.out.println(doctor.getString("FirstName"));
                 ListPatient.addElement(doctor.getString("FirstName"));
             }
             jList2.setModel(ListPatient);
@@ -36,9 +39,24 @@ public class DoctorMenu extends javax.swing.JFrame {
         }
     }
 
-    public DoctorMenu() {
+    public void printPatientWithDoctor(int id) {
+        ResultSet patient = new DoctorController().viewPatientWithDoctor(id);
+        try {
+            while (patient.next()) {
+                listPatientDoctor.addElement(patient.getString("FirstName"));
+            }
+            jList1.setModel(listPatientDoctor);
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public DoctorMenu(Doctor identity) {
+        Identity = identity;
         initComponents();
+//        System.out.println(identity.getEmail());
         printAllData();
+        printPatientWithDoctor(identity.getDoctorId());
         jList2.addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
@@ -63,6 +81,25 @@ public class DoctorMenu extends javax.swing.JFrame {
                 }
             }
         });
+        jList1.addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent e) {
+                if (!e.getValueIsAdjusting()) {
+                    String selectedItem = jList1.getSelectedValue(); // Changed to jList1.getSelectedValue()
+                    ResultSet data = new DoctorController().viewDetailPatient(selectedItem);
+                    try {
+                        if (data.next()) {
+                            patient_id = data.getInt("PatientId");
+                        } else {
+                            System.out.println("not found");
+                        }
+                    } catch (SQLException b) {
+                        System.out.println(b.getMessage());
+                    }
+
+                }
+            }
+        });
     }
 
     /**
@@ -82,11 +119,11 @@ public class DoctorMenu extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        dateField = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        resultField = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        noteField = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -149,6 +186,11 @@ public class DoctorMenu extends javax.swing.JFrame {
         jLabel4.setText("Note");
 
         jButton1.setText("Add");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -162,11 +204,11 @@ public class DoctorMenu extends javax.swing.JFrame {
                         .addGap(101, 101, 101)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(dateField, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(resultField, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(noteField, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(145, 145, 145)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -183,15 +225,15 @@ public class DoctorMenu extends javax.swing.JFrame {
                         .addGap(26, 26, 26)
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(dateField, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(noteField, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(resultField, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(14, Short.MAX_VALUE))
@@ -243,9 +285,9 @@ public class DoctorMenu extends javax.swing.JFrame {
                                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel7)
                                     .addComponent(jLabel8)
-                                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(7, 7, 7))
-                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(blood)
                             .addComponent(birth)
@@ -351,6 +393,10 @@ public class DoctorMenu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       new MedicalCheckupController().createMcu(dateField.getText(), noteField.getText(), resultField.getText(), Identity.getDoctorId(), patient_id);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -381,7 +427,7 @@ public class DoctorMenu extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new DoctorMenu().setVisible(true);
+                new DoctorMenu(null).setVisible(true);
             }
         });
     }
@@ -390,6 +436,7 @@ public class DoctorMenu extends javax.swing.JFrame {
     private javax.swing.JLabel address;
     private javax.swing.JLabel birth;
     private javax.swing.JLabel blood;
+    private javax.swing.JTextField dateField;
     private javax.swing.JLabel email;
     private javax.swing.JLabel gender;
     private javax.swing.JButton jButton1;
@@ -416,10 +463,9 @@ public class DoctorMenu extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JLabel name;
+    private javax.swing.JTextField noteField;
     private javax.swing.JLabel phone;
+    private javax.swing.JTextField resultField;
     // End of variables declaration//GEN-END:variables
 }

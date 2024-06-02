@@ -88,5 +88,19 @@ public class DoctorDao implements IDaoDoctor {
             return null;
         }
     } 
+    
+    @Override
+    public ResultSet viewPatientWithDoctor(int id) {
+        String query = "SELECT patients.FirstName, patients.PatientId FROM appoimentpatients JOIN patients ON patients.PatientId = appoimentpatients.PatientId JOIN appoiments ON appoiments.AppoimentId = appoimentpatients.AppoimentId JOIN doctors ON appoiments.DoctorId = doctors.DoctorId WHERE doctors.DoctorId = '"+ id +"'";
+        try {
+            Connection connection = DataBaseConnection.getConnection();
+            PreparedStatement statement = connection.prepareStatement(query);
+            ResultSet resultSet = statement.executeQuery();
+            return resultSet;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
 
 }

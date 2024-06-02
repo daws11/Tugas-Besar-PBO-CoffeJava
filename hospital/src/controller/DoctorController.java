@@ -27,4 +27,7 @@ public class DoctorController {
     public ResultSet viewDetailPatient(String name) {
         return this.doctorDao.viewDetailPatient(name);
     }
+    public ResultSet viewPatientWithDoctor(int id) {
+        return this.doctorDao.viewPatientWithDoctor(id);
+    }
 }
