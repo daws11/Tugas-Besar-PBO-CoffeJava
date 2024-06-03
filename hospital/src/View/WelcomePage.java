@@ -59,7 +59,7 @@ public class WelcomePage extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(189, 214, 251));
+        jPanel1.setBackground(new java.awt.Color(155, 255, 139));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -72,15 +72,16 @@ public class WelcomePage extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jLabel1.setBackground(new java.awt.Color(38, 106, 237));
+        jLabel1.setBackground(new java.awt.Color(0, 128, 0));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(38, 106, 237));
+        jLabel1.setForeground(new java.awt.Color(0, 128, 0));
         jLabel1.setText("Login Page");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel2.setText("Password");
 
-        jTextField1.setBackground(new java.awt.Color(38, 106, 237));
+        jTextField1.setBackground(new java.awt.Color(0, 128, 0));
+        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -90,14 +91,15 @@ public class WelcomePage extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel3.setText("Email");
 
-        jPasswordField1.setBackground(new java.awt.Color(38, 106, 237));
+        jPasswordField1.setBackground(new java.awt.Color(0, 128, 0));
+        jPasswordField1.setForeground(new java.awt.Color(255, 255, 255));
         jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jPasswordField1ActionPerformed(evt);
             }
         });
 
-        jComboBox1.setBackground(new java.awt.Color(189, 214, 251));
+        jComboBox1.setBackground(new java.awt.Color(155, 255, 139));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Patient", "Doctor", "Admin" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -105,7 +107,7 @@ public class WelcomePage extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(189, 214, 251));
+        jButton1.setBackground(new java.awt.Color(155, 255, 139));
         jButton1.setText("Login");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -117,7 +119,7 @@ public class WelcomePage extends javax.swing.JFrame {
         jLabel4.setText("Not registered yet?");
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(38, 106, 237));
+        jLabel5.setForeground(new java.awt.Color(0, 128, 0));
         jLabel5.setText("SignUp Here");
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -249,6 +251,10 @@ public class WelcomePage extends javax.swing.JFrame {
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
         // TODO add your handling code here:
+         Register register = new Register();
+         register.setLocationRelativeTo(null);
+        register.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed

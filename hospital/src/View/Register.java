@@ -4,6 +4,11 @@
  */
 package View;
 
+import controller.PatientController;
+import java.sql.SQLException;
+import java.time.LocalDate;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author kevin
@@ -70,7 +75,8 @@ public class Register extends javax.swing.JFrame {
         jLabel18.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel18.setText("First Name");
 
-        jTextField6.setBackground(new java.awt.Color(38, 106, 237));
+        jTextField6.setBackground(new java.awt.Color(0, 128, 0));
+        jTextField6.setForeground(new java.awt.Color(255, 255, 255));
         jTextField6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField6ActionPerformed(evt);
@@ -80,7 +86,8 @@ public class Register extends javax.swing.JFrame {
         jLabel19.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel19.setText("Last Name");
 
-        jTextField7.setBackground(new java.awt.Color(38, 106, 237));
+        jTextField7.setBackground(new java.awt.Color(0, 128, 0));
+        jTextField7.setForeground(new java.awt.Color(255, 255, 255));
         jTextField7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField7ActionPerformed(evt);
@@ -88,9 +95,10 @@ public class Register extends javax.swing.JFrame {
         });
 
         jLabel20.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel20.setText("Email Name");
+        jLabel20.setText("Email");
 
-        jTextField8.setBackground(new java.awt.Color(38, 106, 237));
+        jTextField8.setBackground(new java.awt.Color(0, 128, 0));
+        jTextField8.setForeground(new java.awt.Color(255, 255, 255));
         jTextField8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField8ActionPerformed(evt);
@@ -100,7 +108,8 @@ public class Register extends javax.swing.JFrame {
         jLabel21.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel21.setText("Phone Number");
 
-        jTextField9.setBackground(new java.awt.Color(38, 106, 237));
+        jTextField9.setBackground(new java.awt.Color(0, 128, 0));
+        jTextField9.setForeground(new java.awt.Color(255, 255, 255));
         jTextField9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField9ActionPerformed(evt);
@@ -110,7 +119,8 @@ public class Register extends javax.swing.JFrame {
         jLabel22.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel22.setText("Address");
 
-        jTextField10.setBackground(new java.awt.Color(38, 106, 237));
+        jTextField10.setBackground(new java.awt.Color(0, 128, 0));
+        jTextField10.setForeground(new java.awt.Color(255, 255, 255));
         jTextField10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField10ActionPerformed(evt);
@@ -129,16 +139,20 @@ public class Register extends javax.swing.JFrame {
         jLabel26.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel26.setText("year");
 
-        jComboBox7.setBackground(new java.awt.Color(38, 106, 237));
+        jComboBox7.setBackground(new java.awt.Color(0, 128, 0));
+        jComboBox7.setForeground(new java.awt.Color(255, 255, 255));
         jComboBox7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2024", "2023", "2022", "2021", "2020", "2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000", "1999", "1998", "1997", "1996", "1995", "1994", "1993", "1992", "1991", "1990", "1989", "1988", "1987", "1986", "1985", "1984", "1983", "1982", "1981", "1980", "1979", "1978", "1977", "1976", "1975", "1974", "1973", "1972", "1971", "1970", "1969", "1968", "1967", "1966", "1965", "1964", "1963", "1962", "1961", "1960", "1959", "1958", "1957", "1956", "1955", "1954", "1953", "1952", "1951", "1950", "1949", "1948", "1947", "1946", "1945", "1944", "1943", "1942", "1941", "1940", "1939", "1938", "1937", "1936", "1935", "1934", "1933", "1932", "1931", "1930", "1929", "1928", "1927", "1926", "1925", "1924", "1923", "1922", "1921", "1920", "1919", "1918", "1917", "1916", "1915", "1914", "1913", "1912", "1911", "1910", "1909", "1908", "1907", "1906", "1905", "1904", "1903", "1902", "1901", "1900" }));
 
-        jComboBox8.setBackground(new java.awt.Color(38, 106, 237));
-        jComboBox8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
+        jComboBox8.setBackground(new java.awt.Color(0, 128, 0));
+        jComboBox8.setForeground(new java.awt.Color(255, 255, 255));
+        jComboBox8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
 
-        jComboBox9.setBackground(new java.awt.Color(38, 106, 237));
-        jComboBox9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+        jComboBox9.setBackground(new java.awt.Color(0, 128, 0));
+        jComboBox9.setForeground(new java.awt.Color(255, 255, 255));
+        jComboBox9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
 
-        jComboBox10.setBackground(new java.awt.Color(38, 106, 237));
+        jComboBox10.setBackground(new java.awt.Color(0, 128, 0));
+        jComboBox10.setForeground(new java.awt.Color(255, 255, 255));
         jComboBox10.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "B", "AB", "O" }));
 
         jLabel27.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -147,26 +161,34 @@ public class Register extends javax.swing.JFrame {
         jLabel28.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel28.setText("Gender");
 
-        jComboBox11.setBackground(new java.awt.Color(38, 106, 237));
+        jComboBox11.setBackground(new java.awt.Color(0, 128, 0));
+        jComboBox11.setForeground(new java.awt.Color(255, 255, 255));
         jComboBox11.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
 
         jLabel29.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel29.setText("Password");
 
-        jPasswordField3.setBackground(new java.awt.Color(38, 106, 237));
+        jPasswordField3.setBackground(new java.awt.Color(0, 128, 0));
+        jPasswordField3.setForeground(new java.awt.Color(255, 255, 255));
 
         jLabel30.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel30.setText("Retype Password");
 
-        jPasswordField4.setBackground(new java.awt.Color(38, 106, 237));
+        jPasswordField4.setBackground(new java.awt.Color(0, 128, 0));
+        jPasswordField4.setForeground(new java.awt.Color(255, 255, 255));
 
-        jButton2.setBackground(new java.awt.Color(189, 214, 251));
+        jButton2.setBackground(new java.awt.Color(155, 255, 139));
         jButton2.setText("Register");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel31.setText("Already have an account? ");
 
         jLabel32.setBackground(new java.awt.Color(38, 106, 237));
-        jLabel32.setForeground(new java.awt.Color(38, 106, 237));
+        jLabel32.setForeground(new java.awt.Color(0, 128, 0));
         jLabel32.setText("Login Here");
         jLabel32.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -176,7 +198,7 @@ public class Register extends javax.swing.JFrame {
 
         jLabel1.setBackground(new java.awt.Color(38, 106, 237));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(38, 106, 237));
+        jLabel1.setForeground(new java.awt.Color(0, 128, 0));
         jLabel1.setText("Register Page");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -309,7 +331,7 @@ public class Register extends javax.swing.JFrame {
 
         jScrollPane1.setViewportView(jPanel2);
 
-        jPanel1.setBackground(new java.awt.Color(189, 214, 251));
+        jPanel1.setBackground(new java.awt.Color(155, 255, 139));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -342,6 +364,10 @@ public class Register extends javax.swing.JFrame {
 
     private void jLabel32MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel32MouseClicked
         // TODO add your handling code here:
+        WelcomePage welcomePage = new WelcomePage();
+         welcomePage.setLocationRelativeTo(null);
+        welcomePage.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jLabel32MouseClicked
 
     private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
@@ -363,6 +389,64 @@ public class Register extends javax.swing.JFrame {
     private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField6ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        PatientController patientController = new PatientController();
+        String firstName = jTextField6.getText();
+        String lastName = jTextField7.getText();
+        String email = jTextField8.getText();
+        String phoneNumber = jTextField9.getText();
+        String address = jTextField10.getText();
+        String birtDateString = (String)jComboBox7.getSelectedItem()+"-"+(String)jComboBox8.getSelectedItem()+"-"+(String)jComboBox9.getSelectedItem();
+        
+        String password = new String(jPasswordField3.getPassword()).trim();
+        String retypePassword = new String(jPasswordField4.getPassword()).trim();
+        String gender = (String) jComboBox11.getSelectedItem();
+        String bloodType = (String) jComboBox10.getSelectedItem();
+        if (firstName.isEmpty() || lastName.isEmpty() || email.isEmpty() || phoneNumber.isEmpty() ||
+            address.isEmpty() || birtDateString.isEmpty() || password.isEmpty() || gender.isEmpty() || bloodType.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "All fields must be filled.", "Input Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        if (password.length() < 5) {
+            JOptionPane.showMessageDialog(null, "Password must be at least 5 characters long.", "Input Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+            
+        if(!password.equals(retypePassword)){
+            JOptionPane.showMessageDialog(null, "Password and retype password do not match.", "Input Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        try {
+            LocalDate birtDate = LocalDate.parse(birtDateString);
+            
+        
+            JOptionPane.showMessageDialog(null, "Registration successful!", "Success", JOptionPane.INFORMATION_MESSAGE);patientController.register(firstName, lastName, email, phoneNumber, password, address, birtDate, gender, bloodType);
+        WelcomePage welcomePage = new WelcomePage();
+        welcomePage.setLocationRelativeTo(null);
+        welcomePage.setVisible(true);
+        
+        this.dispose();
+        } catch (SQLException e) {
+            if (e.getMessage().contains(email)) {
+                JOptionPane.showMessageDialog(null, "email already used by another user","Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            } else if(e.getMessage().contains(phoneNumber)){
+                JOptionPane.showMessageDialog(null, "phonenumber already used by another user","Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            System.out.println(e.getMessage());
+        }catch (Exception e){
+            if (e.getMessage().contains(birtDateString)){
+                JOptionPane.showMessageDialog(null, "invalid date","Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+             System.out.println(e.getMessage());
+        }
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
