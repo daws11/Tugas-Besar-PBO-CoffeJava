@@ -232,7 +232,7 @@ public class WelcomePage extends javax.swing.JFrame {
             try {
                 Doctor doctor = doctorController.login(jTextField1.getText(), jPasswordField1.getText());
                 if(doctor!=null){
-                    new DoctorMenu(doctor).setVisible(true);
+                    new DoctorMcu(doctor).setVisible(true);
                     this.dispose();
                 }
             } catch (SQLException ex) {
