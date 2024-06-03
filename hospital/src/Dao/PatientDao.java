@@ -28,7 +28,7 @@ public class PatientDao implements IDaopatient {
     @Override
     public boolean registerPatient(Patient patient)  throws SQLException  {
         String query = "INSERT INTO patients (FirstName, LastName, Email, PhoneNumber, Password, Salt, Address, BirthDate, GenderName, bloodType) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        
+        boolean failled = false;
         try (Connection connection = DataBaseConnection.getConnection(); PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setString(1, patient.getFirstName());
             statement.setString(2, patient.getLastName());
@@ -43,8 +43,7 @@ public class PatientDao implements IDaopatient {
             
 
             return statement.executeUpdate() > 0;
-        }
-        
+        } 
     }
 
     public Patient loginPatient(String email, String password) throws SQLException, NoSuchAlgorithmException {
