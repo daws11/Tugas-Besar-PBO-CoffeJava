@@ -15,6 +15,9 @@ import model.Admin;
 import model.Doctor;
 import model.Patient;
 import model.User;
+import testingKevin.TestingAddAdminMenu;
+import testingKevin.TestingAdminMenu;
+import testingKevin.TestingDockterMenu;
 import testingKevin.TestingPatientMenu;
 import util.PasswordUtil;
 
@@ -168,38 +171,35 @@ public class ChangePasswword extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        String salt = "" ;
+        String salt = "";
         String password = "";
         String newPassword = jPasswordField1.getText();
-        if(!jPasswordField1.getText().equals(jPasswordField3.getText())){
+        if (!jPasswordField1.getText().equals(jPasswordField3.getText())) {
             JOptionPane.showMessageDialog(null, "new password and retype new passord does not match.", "Input Error", JOptionPane.ERROR_MESSAGE);
-                    return;
+            return;
         }
-        if(jPasswordField1.getText().length()<5){
+        if (jPasswordField1.getText().length() < 5) {
             JOptionPane.showMessageDialog(null, "new password less than 5", "Input Error", JOptionPane.ERROR_MESSAGE);
-                    return;
+            return;
         }
 
         if (user instanceof Patient) {
-            Patient patient =(Patient) user;
+            Patient patient = (Patient) user;
             String query = "SELECT password, salt FROM patients WHERE PatientId = ?";
-            try (Connection connection = DataBaseConnection.getConnection();
-                 PreparedStatement statement = connection.prepareStatement(query)) {
+            try (Connection connection = DataBaseConnection.getConnection(); PreparedStatement statement = connection.prepareStatement(query)) {
 
-                statement.setInt(1, patient.getPatientId()); // Asumsi metode getId() mengembalikan ID pasien
+                statement.setInt(1, patient.getPatientId()); 
 
                 try (ResultSet resultSet = statement.executeQuery();) {
                     if (resultSet.next()) {
                         password = resultSet.getString("password");
                         salt = resultSet.getString("salt");
-                        
-                        
+
                     }
-                    
-                    
+
                 }
-                
-                if(PasswordUtil.comparePassword(jPasswordField2.getText(), password, salt)){
+
+                if (PasswordUtil.comparePassword(jPasswordField2.getText(), password, salt)) {
                     String newSalt = PasswordUtil.getSalt();
                     String newHashedPassword = PasswordUtil.hashPassword(newPassword, newSalt);
                     String updateQuery = "UPDATE patients SET password = ?, salt = ? WHERE PatientId = ?";
@@ -207,31 +207,132 @@ public class ChangePasswword extends javax.swing.JFrame {
                         updateStatement.setString(1, newHashedPassword);
                         updateStatement.setString(2, newSalt);
                         updateStatement.setInt(3, patient.getPatientId());
-                        
+
+                        int rowsUpdated = updateStatement.executeUpdate();
+                        if (rowsUpdated > 0) {
+                            JOptionPane.showMessageDialog(null, "password update successful!", "Success", JOptionPane.INFORMATION_MESSAGE);
+                            
+                        } else {
+                            JOptionPane.showMessageDialog(null, "password update failed!", "Input Error", JOptionPane.ERROR_MESSAGE);
+                        }
+                    } catch (SQLException e) {
+                        System.out.println(e.getMessage());
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(null, "password does not match.", "Input Error", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+
+            } catch (SQLException e) {
+                System.out.println(e.getMessage());
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+            TestingPatientMenu testingPatientMenu = new TestingPatientMenu(patient);
+            testingPatientMenu.setLocationRelativeTo(null);
+            testingPatientMenu.setVisible(true);
+            this.dispose();
+        }
+
+        if (user instanceof Doctor) {
+            Doctor doctor = (Doctor) user;
+            String query = "SELECT password, salt FROM doctors WHERE DoctorId = ?";
+            
+            try (Connection connection = DataBaseConnection.getConnection(); PreparedStatement statement = connection.prepareStatement(query)) {
+                
+                statement.setInt(1, doctor.getDoctorId()); 
+
+                try (ResultSet resultSet = statement.executeQuery()) {
+                    if (resultSet.next()) {
+                        password = resultSet.getString("password");
+                        salt = resultSet.getString("salt");
+                    }
+                }
+
+                if (PasswordUtil.comparePassword(jPasswordField2.getText(), password, salt)) {
+                    String newSalt = PasswordUtil.getSalt();
+                    String newHashedPassword = PasswordUtil.hashPassword(newPassword, newSalt);
+                    String updateQuery = "UPDATE doctors SET password = ?, salt = ? WHERE DoctorId = ?";
+                    try (PreparedStatement updateStatement = connection.prepareStatement(updateQuery)) {
+                        updateStatement.setString(1, newHashedPassword);
+                        updateStatement.setString(2, newSalt);
+                        updateStatement.setInt(3, doctor.getDoctorId());
+
                         int rowsUpdated = updateStatement.executeUpdate();
                         if (rowsUpdated > 0) {
                             System.out.println("Password updated successfully.");
                         } else {
                             System.out.println("Password update failed.");
                         }
-                    }catch (SQLException e){
+                    } catch (SQLException e) {
                         System.out.println(e.getMessage());
-                    }catch (Exception e){
+                    } catch (Exception e) {
                         System.out.println(e.getMessage());
                     }
-                }else {
-                    JOptionPane.showMessageDialog(null, "password does not match.", "Input Error", JOptionPane.ERROR_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(null, "Password does not match.", "Input Error", JOptionPane.ERROR_MESSAGE);
                     return;
                 }
-                
             } catch (SQLException e) {
                 System.out.println(e.getMessage());
-            } catch (Exception e){
+            } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
-            TestingPatientMenu testingPatientMenu = new TestingPatientMenu(patient);
-            testingPatientMenu.setLocationRelativeTo(null);
-            testingPatientMenu.setVisible(true);
+            TestingDockterMenu testingDockterMenu = new TestingDockterMenu(doctor);
+            testingDockterMenu.setLocationRelativeTo(null);
+            testingDockterMenu.setVisible(true);
+            this.dispose();
+        }
+
+        if (user instanceof Admin) {
+            Admin admin = (Admin) user;
+            String query = "SELECT password, salt FROM admins WHERE AdminId = ?";
+            
+            try (Connection connection = DataBaseConnection.getConnection(); PreparedStatement statement = connection.prepareStatement(query)) {
+               
+                statement.setInt(1, admin.getAdminId()); 
+
+                try (ResultSet resultSet = statement.executeQuery()) {
+                    if (resultSet.next()) {
+                        password = resultSet.getString("password");
+                        salt = resultSet.getString("salt");
+                    }
+                }
+
+                if (PasswordUtil.comparePassword(jPasswordField2.getText(), password, salt)) {
+                    String newSalt = PasswordUtil.getSalt();
+                    String newHashedPassword = PasswordUtil.hashPassword(newPassword, newSalt);
+                    String updateQuery = "UPDATE admins SET password = ?, salt = ? WHERE AdminId = ?";
+                    try (PreparedStatement updateStatement = connection.prepareStatement(updateQuery)) {
+                        updateStatement.setString(1, newHashedPassword);
+                        updateStatement.setString(2, newSalt);
+                        updateStatement.setInt(3, admin.getAdminId());
+
+                        int rowsUpdated = updateStatement.executeUpdate();
+                        if (rowsUpdated > 0) {
+                            System.out.println("Password updated successfully.");
+                        } else {
+                            System.out.println("Password update failed.");
+                        }
+                    } catch (SQLException e) {
+                        System.out.println(e.getMessage());
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(null, "Password does not match.", "Input Error", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+            } catch (SQLException e) {
+                System.out.println(e.getMessage());
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+            TestingAdminMenu testingAddAdminMenu = new TestingAdminMenu(admin);
+            testingAddAdminMenu.setLocationRelativeTo(null);
+            testingAddAdminMenu.setVisible(true);
             this.dispose();
         }
 
