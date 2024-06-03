@@ -6,7 +6,7 @@ package controller;
 
 import Dao.DoctorDao;
 import java.security.NoSuchAlgorithmException;
-import java.sql.SQLException;
+import java.sql.*;
 import model.Doctor;
 
 /**
@@ -20,5 +20,14 @@ public class DoctorController {
     }
     public Doctor login(String email, String Password) throws SQLException, NoSuchAlgorithmException{
         return this.doctorDao.loginDoctor(email, Password);
+    }
+     public ResultSet viewAllPatients() {
+        return this.doctorDao.viewAllPatients();
+    }
+    public ResultSet viewDetailPatient(String name) {
+        return this.doctorDao.viewDetailPatient(name);
+    }
+    public ResultSet viewPatientWithDoctor(int id) {
+        return this.doctorDao.viewPatientWithDoctor(id);
     }
 }

@@ -232,8 +232,7 @@ public class WelcomePage extends javax.swing.JFrame {
             try {
                 Doctor doctor = doctorController.login(jTextField1.getText(), jPasswordField1.getText());
                 if(doctor!=null){
-                    TestingDockterMenu testingDockterMenu = new TestingDockterMenu(doctor);
-                    testingDockterMenu.setVisible(true);
+                    new DoctorMenu(doctor).setVisible(true);
                     this.dispose();
                 }
             } catch (SQLException ex) {
