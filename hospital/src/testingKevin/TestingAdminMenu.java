@@ -4,20 +4,22 @@
  */
 package testingKevin;
 
+import View.ChangePasswword;
 import model.Admin;
 import model.Patient;
+import model.User;
 
 /**
  *
  * @author kevin
  */
 public class TestingAdminMenu extends javax.swing.JFrame {
-
+Admin admin;
     /**
      * Creates new form testingAdminMenu
      */
     public TestingAdminMenu(Admin admin) {
-      
+        this.admin = admin;
         initComponents();
         jLabel1.setText(admin.getEmail());
     }
@@ -44,7 +46,7 @@ public class TestingAdminMenu extends javax.swing.JFrame {
 
         jButton2.setText("delete");
 
-        jButton3.setText("doctor");
+        jButton3.setText("change password");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -65,7 +67,7 @@ public class TestingAdminMenu extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton3)
                             .addComponent(jButton1))))
-                .addContainerGap(161, Short.MAX_VALUE))
+                .addContainerGap(120, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(159, 159, 159)
@@ -94,6 +96,10 @@ public class TestingAdminMenu extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        ChangePasswword changePasswword = new ChangePasswword(admin);
+        changePasswword.setVisible(true);
+        changePasswword.setLocationRelativeTo(null);
+          this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
