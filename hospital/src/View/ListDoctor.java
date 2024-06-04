@@ -58,8 +58,7 @@ public class ListDoctor extends javax.swing.JFrame {
             private void filterTable() {
                 String searchText = jTextField1.getText().toLowerCase();
                 List<Doctor> filteredDoctors = doctors.stream()
-                        .filter(doctor -> doctor.getFirstName().toLowerCase().contains(searchText) ||
-                                doctor.getLastName().toLowerCase().contains(searchText))
+                        .filter(doctor -> (doctor.getFirstName() + " " + doctor.getLastName()).toLowerCase().contains(searchText))
                         .collect(Collectors.toList());
                 loadTable(filteredDoctors);
             }
