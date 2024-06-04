@@ -123,7 +123,7 @@ public class AdminDao {
     //edit doctor
     
     public boolean updateDoctor(Doctor doctor) throws SQLException {
-    String query = "UPDATE doctors SET FirstName = ?, LastName = ?, Address = ?, BirthDate = ?, PhoneNumber = ?, Email = ? WHERE DoctorId = ?";
+    String query = "UPDATE doctors SET FirstName = ?, LastName = ?, Address = ?, BirthDate = ?, PhoneNumber = ?, Email = ?,SpecializationId = ? WHERE DoctorId = ?";
     try (Connection connection = DataBaseConnection.getConnection(); PreparedStatement statement = connection.prepareStatement(query)) {
         statement.setString(1, doctor.getFirstName());
         statement.setString(2, doctor.getLastName());
@@ -131,7 +131,8 @@ public class AdminDao {
         statement.setDate(4, java.sql.Date.valueOf(doctor.getBirtDate()));
         statement.setString(5, doctor.getPhoneNumber());
         statement.setString(6, doctor.getEmail());
-        statement.setInt(7, doctor.getDoctorId());
+        statement.setInt(7, doctor.getSpecialization().getSpecializationId());
+        statement.setInt(8, doctor.getDoctorId());
         return statement.executeUpdate() > 0;
     }
 }

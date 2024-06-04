@@ -55,12 +55,7 @@ public class AdminController {
     }
       public boolean updateDoctor(int doctorId, String firstName, String lastName, int specializationId, String address, LocalDate birthDate, String phoneNumber, String email) throws SQLException {
          Doctor existigdoctor = this.adminDao.getDoctorById(doctorId);
-         if(existigdoctor.getEmail()==email){
-             email =null;
-         }
-          if (existigdoctor.getPhoneNumber()==phoneNumber) {
-              phoneNumber = null;
-          }
+         
           SpecializationController specializationController = new SpecializationController();
           Specialization specialization = specializationController.getSpecializationById(specializationId);
         Doctor doctor = new Doctor(doctorId, address, birthDate, specialization, firstName, lastName, email, phoneNumber, null, null);

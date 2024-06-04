@@ -14,6 +14,7 @@ import java.util.List;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import model.Admin;
+import model.Doctor;
 import model.Specialization;
 import testingKevin.TestingAdminMenu;
 
@@ -21,17 +22,19 @@ import testingKevin.TestingAdminMenu;
  *
  * @author kevin
  */
-public class AddDoctor extends javax.swing.JFrame {
+public class EditDoctor extends javax.swing.JFrame {
     AdminController adminController;
     SpecializationDao specializationDao;
     List<Specialization> specializations;
     Admin admin;
+    Doctor doctor;
     /**
      * Creates new form Register
      */
-    public AddDoctor(Admin admin) {
+    public EditDoctor(Admin admin, Doctor doctor) {
         
         initComponents();
+        this.doctor = doctor;
         this.admin = admin;
         this.adminController = new AdminController();
         this.specializationDao = new SpecializationDao();
@@ -41,6 +44,17 @@ public class AddDoctor extends javax.swing.JFrame {
         for (Specialization specialization : specializations) {
             jComboBox11.addItem(specialization.getName());
         }
+        String birtdateString = doctor.getBirtDate().toString();
+        String[] parts = birtdateString.split("-");
+        jTextField6.setText(doctor.getFirstName());
+        jTextField7.setText(doctor.getLastName());
+         jTextField8.setText(doctor.getEmail());
+         jTextField9.setText(doctor.getPhoneNumber());
+         jTextArea1.setText(doctor.getAddress());
+         jComboBox7.setSelectedItem(parts[0]);
+        jComboBox8.setSelectedItem(parts[1]);
+        jComboBox9.setSelectedItem(parts[2]);
+        jComboBox11.setSelectedItem(doctor.getSpecialization().getName());
         
         
 
@@ -89,10 +103,6 @@ public class AddDoctor extends javax.swing.JFrame {
         jComboBox9 = new javax.swing.JComboBox<>();
         jLabel28 = new javax.swing.JLabel();
         jComboBox11 = new javax.swing.JComboBox<>();
-        jLabel29 = new javax.swing.JLabel();
-        jPasswordField3 = new javax.swing.JPasswordField();
-        jLabel30 = new javax.swing.JLabel();
-        jPasswordField4 = new javax.swing.JPasswordField();
         jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -188,18 +198,6 @@ public class AddDoctor extends javax.swing.JFrame {
             }
         });
 
-        jLabel29.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel29.setText("Password");
-
-        jPasswordField3.setBackground(new java.awt.Color(0, 51, 102));
-        jPasswordField3.setForeground(new java.awt.Color(255, 255, 255));
-
-        jLabel30.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel30.setText("Retype Password");
-
-        jPasswordField4.setBackground(new java.awt.Color(0, 51, 102));
-        jPasswordField4.setForeground(new java.awt.Color(255, 255, 255));
-
         jButton2.setBackground(new java.awt.Color(139, 207, 255));
         jButton2.setText("Add Doctor");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -238,21 +236,9 @@ public class AddDoctor extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jComboBox11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel29))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPasswordField3, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel30))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPasswordField4, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(92, 92, 92)
+                        .addGap(96, 96, 96)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(376, Short.MAX_VALUE))
+                .addContainerGap(382, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addContainerGap()
@@ -298,16 +284,8 @@ public class AddDoctor extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jComboBox11, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel29)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPasswordField3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel30)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPasswordField4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 142, Short.MAX_VALUE))
+                .addContainerGap(296, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addContainerGap()
@@ -357,7 +335,7 @@ public class AddDoctor extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 812, Short.MAX_VALUE)
+            .addGap(0, 653, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -372,7 +350,7 @@ public class AddDoctor extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 812, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 653, Short.MAX_VALUE)
         );
 
         pack();
@@ -404,17 +382,9 @@ public class AddDoctor extends javax.swing.JFrame {
         String birtDateString = (String)jComboBox7.getSelectedItem()+"-"+(String)jComboBox8.getSelectedItem()+"-"+(String)jComboBox9.getSelectedItem();
         
         int specializationId = specializations.get(jComboBox11.getSelectedIndex()).getSpecializationId();
-        String password = jPasswordField3.getText();
-        String retypePassword = jPasswordField4.getText();
         
-        if(!password.equals(retypePassword)){
-            JOptionPane.showMessageDialog(null, "new password and retype new passord does not match.", "Input Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        if (password.length()<5) {
-            JOptionPane.showMessageDialog(null, "new password less than 5", "Input Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
+        
+        
         
         if(firstName.isEmpty()||lastName.isEmpty()||email.isEmpty()||phoneNumber.isEmpty()||address.isEmpty()
                 ||birtDateString.isBlank()||specializationId == 0){
@@ -424,8 +394,8 @@ public class AddDoctor extends javax.swing.JFrame {
         
         try {
             LocalDate birDate = LocalDate.parse(birtDateString);
-            this.adminController.addDoctor(firstName, lastName, specializationId, address, birDate, phoneNumber, email, password);
-            JOptionPane.showMessageDialog(null, "add doctor succesufull", "Success", JOptionPane.INFORMATION_MESSAGE);
+            this.adminController.updateDoctor(doctor.getDoctorId(), firstName, lastName, specializationId, address, birDate, phoneNumber, email);
+            JOptionPane.showMessageDialog(null, "update doctor succesufull", "Success", JOptionPane.INFORMATION_MESSAGE);
             TestingAdminMenu testingAdminMenu = new TestingAdminMenu(admin);
             testingAdminMenu.setLocationRelativeTo(null);
             testingAdminMenu.setVisible(true);
@@ -484,7 +454,7 @@ public class AddDoctor extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AddDoctor(null).setVisible(true);
+                new EditDoctor(null,null).setVisible(true);
             }
         });
     }
@@ -507,12 +477,8 @@ public class AddDoctor extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel30;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPasswordField jPasswordField3;
-    private javax.swing.JPasswordField jPasswordField4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;
