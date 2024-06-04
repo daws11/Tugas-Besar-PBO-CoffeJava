@@ -15,10 +15,10 @@ import model.Admin;
 import model.Doctor;
 import model.Patient;
 import model.User;
-import testingKevin.TestingAddAdminMenu;
-import testingKevin.TestingAdminMenu;
-import testingKevin.TestingDockterMenu;
-import testingKevin.TestingPatientMenu;
+
+import DashBoard.AdminDashBoard;
+import DashBoard.DoctorDashBoard;
+import DashBoard.PatientMenu;
 import util.PasswordUtil;
 
 /**
@@ -230,7 +230,7 @@ public class ChangePasswword extends javax.swing.JFrame {
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
-            TestingPatientMenu testingPatientMenu = new TestingPatientMenu(patient);
+            PatientMenu testingPatientMenu = new PatientMenu(patient);
             testingPatientMenu.setLocationRelativeTo(null);
             testingPatientMenu.setVisible(true);
             this.dispose();
@@ -280,7 +280,7 @@ public class ChangePasswword extends javax.swing.JFrame {
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
-            TestingDockterMenu testingDockterMenu = new TestingDockterMenu(doctor);
+            DoctorDashBoard testingDockterMenu = new DoctorDashBoard(doctor);
             testingDockterMenu.setLocationRelativeTo(null);
             testingDockterMenu.setVisible(true);
             this.dispose();
@@ -330,7 +330,7 @@ public class ChangePasswword extends javax.swing.JFrame {
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
-            TestingAdminMenu testingAddAdminMenu = new TestingAdminMenu(admin);
+            AdminDashBoard testingAddAdminMenu = new AdminDashBoard(admin);
             testingAddAdminMenu.setLocationRelativeTo(null);
             testingAddAdminMenu.setVisible(true);
             this.dispose();

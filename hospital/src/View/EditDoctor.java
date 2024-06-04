@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
 import model.Admin;
 import model.Doctor;
 import model.Specialization;
-import testingKevin.TestingAdminMenu;
+import DashBoard.AdminDashBoard;
 
 /**
  *
@@ -199,7 +199,7 @@ public class EditDoctor extends javax.swing.JFrame {
         });
 
         jButton2.setBackground(new java.awt.Color(139, 207, 255));
-        jButton2.setText("Add Doctor");
+        jButton2.setText("Edit Doctor");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -396,7 +396,7 @@ public class EditDoctor extends javax.swing.JFrame {
             LocalDate birDate = LocalDate.parse(birtDateString);
             this.adminController.updateDoctor(doctor.getDoctorId(), firstName, lastName, specializationId, address, birDate, phoneNumber, email);
             JOptionPane.showMessageDialog(null, "update doctor succesufull", "Success", JOptionPane.INFORMATION_MESSAGE);
-            TestingAdminMenu testingAdminMenu = new TestingAdminMenu(admin);
+            AdminDashBoard testingAdminMenu = new AdminDashBoard(admin);
             testingAdminMenu.setLocationRelativeTo(null);
             testingAdminMenu.setVisible(true);
             this.dispose();

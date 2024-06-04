@@ -15,7 +15,7 @@ import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import model.Admin;
 import model.Specialization;
-import testingKevin.TestingAdminMenu;
+import DashBoard.AdminDashBoard;
 
 /**
  *
@@ -292,8 +292,8 @@ public class AddAdmin extends javax.swing.JFrame {
         try {
 
             this.adminController.addAdmin(firstName, lastName, email, phoneNumber, password);
-            JOptionPane.showMessageDialog(null, "Registration successful!", "Success", JOptionPane.INFORMATION_MESSAGE);
-            TestingAdminMenu testingAdminMenu = new TestingAdminMenu(admin);
+            JOptionPane.showMessageDialog(null, "add new admin successful!", "Success", JOptionPane.INFORMATION_MESSAGE);
+            AdminDashBoard testingAdminMenu = new AdminDashBoard(admin);
             testingAdminMenu.setLocationRelativeTo(null);
             testingAdminMenu.setVisible(true);
             this.dispose();

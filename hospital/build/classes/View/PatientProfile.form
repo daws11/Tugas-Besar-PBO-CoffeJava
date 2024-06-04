@@ -203,7 +203,7 @@
             <Component class="javax.swing.JTextField" name="jTextField6">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="80" red="0" type="rgb"/>
+                  <Color blue="0" green="a5" red="ff" type="rgb"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -224,7 +224,7 @@
             <Component class="javax.swing.JTextField" name="jTextField7">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="80" red="0" type="rgb"/>
+                  <Color blue="0" green="a5" red="ff" type="rgb"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -245,7 +245,7 @@
             <Component class="javax.swing.JTextField" name="jTextField8">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="80" red="0" type="rgb"/>
+                  <Color blue="0" green="a5" red="ff" type="rgb"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -266,7 +266,7 @@
             <Component class="javax.swing.JTextField" name="jTextField9">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="80" red="0" type="rgb"/>
+                  <Color blue="0" green="a5" red="ff" type="rgb"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -319,7 +319,7 @@
             <Component class="javax.swing.JComboBox" name="jComboBox7">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="80" red="0" type="rgb"/>
+                  <Color blue="0" green="a5" red="ff" type="rgb"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -461,7 +461,7 @@
             <Component class="javax.swing.JComboBox" name="jComboBox8">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="80" red="0" type="rgb"/>
+                  <Color blue="0" green="a5" red="ff" type="rgb"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -490,7 +490,7 @@
             <Component class="javax.swing.JComboBox" name="jComboBox9">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="80" red="0" type="rgb"/>
+                  <Color blue="0" green="a5" red="ff" type="rgb"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -538,7 +538,7 @@
             <Component class="javax.swing.JComboBox" name="jComboBox10">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="80" red="0" type="rgb"/>
+                  <Color blue="0" green="a5" red="ff" type="rgb"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -575,7 +575,7 @@
             <Component class="javax.swing.JComboBox" name="jComboBox11">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="80" red="0" type="rgb"/>
+                  <Color blue="0" green="a5" red="ff" type="rgb"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -594,7 +594,7 @@
             <Component class="javax.swing.JButton" name="jButton2">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="8b" green="ff" red="9b" type="rgb"/>
+                  <Color blue="0" green="d7" red="ff" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="save"/>
               </Properties>
@@ -611,7 +611,7 @@
                   <Font name="Segoe UI" size="24" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="80" red="0" type="rgb"/>
+                  <Color blue="0" green="d7" red="ff" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="My Profile Page"/>
               </Properties>
@@ -626,7 +626,7 @@
                 <Component class="javax.swing.JTextArea" name="jTextArea1">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="80" red="0" type="rgb"/>
+                      <Color blue="0" green="a5" red="ff" type="rgb"/>
                     </Property>
                     <Property name="columns" type="int" value="20"/>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -644,7 +644,7 @@
     <Container class="javax.swing.JPanel" name="jPanel1">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="8b" green="ff" red="9b" type="rgb"/>
+          <Color blue="0" green="d7" red="ff" type="rgb"/>
         </Property>
       </Properties>
 

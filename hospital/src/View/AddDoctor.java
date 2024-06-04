@@ -15,7 +15,7 @@ import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import model.Admin;
 import model.Specialization;
-import testingKevin.TestingAdminMenu;
+import DashBoard.AdminDashBoard;
 
 /**
  *
@@ -426,7 +426,7 @@ public class AddDoctor extends javax.swing.JFrame {
             LocalDate birDate = LocalDate.parse(birtDateString);
             this.adminController.addDoctor(firstName, lastName, specializationId, address, birDate, phoneNumber, email, password);
             JOptionPane.showMessageDialog(null, "add doctor succesufull", "Success", JOptionPane.INFORMATION_MESSAGE);
-            TestingAdminMenu testingAdminMenu = new TestingAdminMenu(admin);
+            AdminDashBoard testingAdminMenu = new AdminDashBoard(admin);
             testingAdminMenu.setLocationRelativeTo(null);
             testingAdminMenu.setVisible(true);
             this.dispose();
