@@ -6,6 +6,7 @@ package View;
 
 import DashBoard.PatientMenu;
 import DashBoard.AdminDashBoard;
+import DashBoard.DoctorDashBoard;
 import controller.AdminController;
 import controller.DoctorController;
 import controller.PatientController;
@@ -200,6 +201,7 @@ public class WelcomePage extends javax.swing.JFrame {
                 Admin admin = this.adminController.login(jTextField1.getText(), jPasswordField1.getText());
                 if (admin != null) {
                     AdminDashBoard testingAdminMenu = new AdminDashBoard(admin);
+                    testingAdminMenu.setLocationRelativeTo(null);
                     testingAdminMenu.setVisible(true);
                     this.dispose();
                 }
@@ -218,6 +220,7 @@ public class WelcomePage extends javax.swing.JFrame {
                 Patient patient = patientController.login(jTextField1.getText(), jPasswordField1.getText());
                 if(patient!=null){
                     PatientMenu testingPatientMenu = new PatientMenu(patient);
+                    testingPatientMenu.setLocationRelativeTo(null);
                     testingPatientMenu.setVisible(true);
                     this.dispose();
                 }
@@ -234,7 +237,9 @@ public class WelcomePage extends javax.swing.JFrame {
             try {
                 Doctor doctor = doctorController.login(jTextField1.getText(), jPasswordField1.getText());
                 if(doctor!=null){
-                    new DoctorMcu(doctor).setVisible(true);
+                    DoctorDashBoard doctorDashBoard = new DoctorDashBoard(doctor);
+                    doctorDashBoard.setLocationRelativeTo(null);
+                    doctorDashBoard.setVisible(true);
                     this.dispose();
                 }
             } catch (SQLException ex) {

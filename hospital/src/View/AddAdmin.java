@@ -23,8 +23,7 @@ import DashBoard.AdminDashBoard;
  */
 public class AddAdmin extends javax.swing.JFrame {
     AdminController adminController;
-    SpecializationDao specializationDao;
-    List<Specialization> specializations;
+   
     Admin admin;
     /**
      * Creates new form Register
@@ -34,8 +33,7 @@ public class AddAdmin extends javax.swing.JFrame {
         initComponents();
         this.admin = admin;
         this.adminController = new AdminController();
-        this.specializationDao = new SpecializationDao();
-        specializations = this.specializationDao.getSpecializations();
+      
         
         
         
@@ -44,16 +42,7 @@ public class AddAdmin extends javax.swing.JFrame {
         
         
     }
-    private void populateSpecializationComboBox() {
-    if (specializations != null && !specializations.isEmpty()) {
-        for (Specialization specialization : specializations) {
-           
-        }
-    } else {
-        // Handle empty list scenario (e.g., display message, disable combo box)
-        System.out.println("No specializations found.");
-    }
-}
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -80,6 +69,7 @@ public class AddAdmin extends javax.swing.JFrame {
         jPasswordField4 = new javax.swing.JPasswordField();
         jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -93,7 +83,7 @@ public class AddAdmin extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 565, Short.MAX_VALUE)
         );
 
         jLabel18.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -170,6 +160,14 @@ public class AddAdmin extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(0, 51, 102));
         jLabel1.setText("Add Admin");
 
+        jButton3.setBackground(new java.awt.Color(139, 207, 255));
+        jButton3.setText("back");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -193,7 +191,9 @@ public class AddAdmin extends javax.swing.JFrame {
                         .addComponent(jLabel29))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(85, 85, 85)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
@@ -223,7 +223,9 @@ public class AddAdmin extends javax.swing.JFrame {
                 .addComponent(jPasswordField4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 24, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addGap(55, 55, 55)
@@ -334,6 +336,14 @@ public class AddAdmin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField6ActionPerformed
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        ListDoctor listDoctor = new ListDoctor(admin);
+            listDoctor.setLocationRelativeTo(null);
+            listDoctor.setVisible(true);
+            this.dispose();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -371,6 +381,7 @@ public class AddAdmin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;

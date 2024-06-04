@@ -42,6 +42,7 @@ public class ChangePasswword extends javax.swing.JFrame {
             jPasswordField2.setBackground(new Color(0, 51, 102));
             jPasswordField3.setBackground(new Color(0, 51, 102));
             jButton1.setBackground(new Color(0, 51, 102));
+            jButton2.setBackground(new Color(0, 51, 102));
             this.getContentPane().setBackground(new Color(139, 207, 255));
         }
         if (user instanceof Doctor) {
@@ -49,6 +50,7 @@ public class ChangePasswword extends javax.swing.JFrame {
             jPasswordField2.setBackground(new Color(0, 128, 0));
             jPasswordField3.setBackground(new Color(0, 128, 0));
             jButton1.setBackground(new Color(0, 128, 0));
+             jButton2.setBackground(new Color(0, 128, 0));
             this.getContentPane().setBackground(new Color(155, 255, 139));
 
         }
@@ -58,6 +60,7 @@ public class ChangePasswword extends javax.swing.JFrame {
             jPasswordField2.setBackground(new Color(255, 165, 0));
             jPasswordField3.setBackground(new Color(255, 165, 0));
             jButton1.setBackground(new Color(255, 165, 0));
+             jButton2.setBackground(new Color(255, 165, 0));
             this.getContentPane().setBackground(new Color(255, 215, 0));
 
         }
@@ -81,6 +84,7 @@ public class ChangePasswword extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -112,6 +116,13 @@ public class ChangePasswword extends javax.swing.JFrame {
 
         jLabel4.setText("retype enter your new password");
 
+        jButton2.setText("back");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -133,7 +144,9 @@ public class ChangePasswword extends javax.swing.JFrame {
                                 .addComponent(jPasswordField2))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(129, 129, 129)
-                        .addComponent(jButton1)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(82, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -155,7 +168,9 @@ public class ChangePasswword extends javax.swing.JFrame {
                 .addComponent(jPasswordField3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         pack();
@@ -338,6 +353,24 @@ public class ChangePasswword extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        if(user instanceof Admin){
+            AdminDashBoard adminDashBoard = new AdminDashBoard((Admin)user);
+            adminDashBoard.setLocationRelativeTo(null);
+            adminDashBoard.setVisible(true);
+        } else if(user instanceof Patient){
+            PatientMenu patientMenu = new PatientMenu((Patient)user);
+            patientMenu.setLocationRelativeTo(null);
+            patientMenu.setVisible(true);
+        } else if(user instanceof Doctor){
+            DoctorDashBoard doctorDashBoard = new DoctorDashBoard((Doctor)user);
+            doctorDashBoard.setLocationRelativeTo(null);
+            doctorDashBoard.setVisible(true);
+        }
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -375,6 +408,7 @@ public class ChangePasswword extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
