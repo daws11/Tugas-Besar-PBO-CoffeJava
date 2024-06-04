@@ -4,7 +4,7 @@
  */
 package View;
 
-
+import model.Room;
 import database.DataBaseConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -63,25 +63,40 @@ public class RoomGUI extends javax.swing.JFrame {
     
     private void populateRoom(){
         try {
-            // SQL query to retrieve room names
             String query = "SELECT RoomName FROM rooms";
             PreparedStatement statement = conn.prepareStatement(query);
             ResultSet rs = statement.executeQuery();
-            // Clear the list model
             listModel.clear();
-            // Add room names to the list model
             while (rs.next()) {
                 String roomName = rs.getString("RoomName");
                 listModel.addElement(roomName);
             }
-            // Set the list model to the JList
             jList1.setModel(listModel);
         } catch (SQLException ex) {
-            // Handle database connection or query errors
             ex.printStackTrace();
-            // Display an error message to the user
             JOptionPane.showMessageDialog(this, "Failed to retrieve room data from the database", "Error", JOptionPane.ERROR_MESSAGE);
         }
+    }
+    
+    private void deleteRoom(String roomname){
+                try {
+            String query = "DELETE FROM rooms WHERE RoomName = ?";
+            PreparedStatement statement = conn.prepareStatement(query);
+            statement.setString(1, roomname);
+            statement.executeUpdate();
+            conn.close();
+            int rowsAffected = statement.executeUpdate();
+
+            if (rowsAffected == 1) {
+                JOptionPane.showMessageDialog(RoomGUI.this, "Room deleted successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(RoomGUI.this, "Failed to delete room", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            JOptionPane.showMessageDialog(RoomGUI.this, "An error occurred while deleting the room", "Error", JOptionPane.ERROR_MESSAGE);
+        
     }
     
     
@@ -292,8 +307,8 @@ public class RoomGUI extends javax.swing.JFrame {
             
             String roomName = listModel.getElementAt(selectedIndex);
             
-            //AddEditRoomDialog editDialog = new AddEditRoomDialog(RoomGUI.this, true, conn, roomName);
-            //editDialog.setVisible(true);
+            AddEditRoomDialog editDialog = new AddEditRoomDialog(RoomGUI.this, true, conn, roomName, false);
+            editDialog.setVisible(true);
             
             populateRoom();
         } else {
@@ -312,7 +327,7 @@ public class RoomGUI extends javax.swing.JFrame {
             int option = JOptionPane.showConfirmDialog(RoomGUI.this, "Are you sure you want to delete the selected room?", "Confirmation", JOptionPane.YES_NO_OPTION);
             if (option == JOptionPane.YES_OPTION) {
                 
-                //deleteRoom(roomName);
+                deleteRoom(roomName);
                 
                 populateRoom();
             }
