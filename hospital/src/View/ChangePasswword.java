@@ -44,7 +44,7 @@ public class ChangePasswword extends javax.swing.JFrame {
             jButton1.setBackground(new Color(0, 51, 102));
             this.getContentPane().setBackground(new Color(139, 207, 255));
         }
-        if (user instanceof Patient) {
+        if (user instanceof Doctor) {
             jPasswordField1.setBackground(new Color(0, 128, 0));
             jPasswordField2.setBackground(new Color(0, 128, 0));
             jPasswordField3.setBackground(new Color(0, 128, 0));
@@ -52,7 +52,7 @@ public class ChangePasswword extends javax.swing.JFrame {
             this.getContentPane().setBackground(new Color(155, 255, 139));
 
         }
-        if (user instanceof Doctor) {
+        if (user instanceof Patient) {
 
             jPasswordField1.setBackground(new Color(255, 165, 0));
             jPasswordField2.setBackground(new Color(255, 165, 0));
