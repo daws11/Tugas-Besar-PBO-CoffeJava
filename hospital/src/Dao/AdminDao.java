@@ -4,6 +4,7 @@
  */
 package Dao;
 
+import DaoInterface.IDaoAdmin;
 import controller.SpecializationController;
 import database.DataBaseConnection;
 import java.security.NoSuchAlgorithmException;
@@ -24,8 +25,9 @@ import util.PasswordUtil;
  *
  * @author kevin
  */
-public class AdminDao {
+public class AdminDao implements  IDaoAdmin{
 
+    @Override
     public Admin loginAdmin(String email, String password) throws SQLException, NoSuchAlgorithmException {
         String query = "SELECT * FROM admins WHERE email = ?";
         try (Connection connection = DataBaseConnection.getConnection(); PreparedStatement statement = connection.prepareStatement(query)) {
@@ -55,6 +57,7 @@ public class AdminDao {
         return null;
     }
     
+    @Override
     public boolean addAdmin(Admin admin) throws SQLException{
          String query = "INSERT INTO admins (FirstName, LastName, Email, PhoneNumber, Password, Salt) VALUES (?, ?, ?, ?, ?, ?)"; 
          try (Connection connection = DataBaseConnection.getConnection(); PreparedStatement statement = connection.prepareStatement(query)) {
@@ -72,6 +75,7 @@ public class AdminDao {
         
     }
     
+    @Override
     public boolean editAdmin(int adminId, String firstName, String lastName, String email, String phoneNumber) throws SQLException {
         String query = "UPDATE admins SET FirstName = ?, LastName = ?, Email = ?, PhoneNumber = ? WHERE AdminId = ?";
         try (Connection connection = DataBaseConnection.getConnection(); PreparedStatement statement = connection.prepareStatement(query)) {
@@ -86,6 +90,7 @@ public class AdminDao {
     }
 
     // Delete an admin
+    @Override
     public boolean deleteAdmin(int adminId) throws SQLException {
         String query = "DELETE FROM admins WHERE AdminId = ?";
         try (Connection connection = DataBaseConnection.getConnection(); PreparedStatement statement = connection.prepareStatement(query)) {
@@ -94,6 +99,7 @@ public class AdminDao {
         }
     }
     
+    @Override
     public boolean addDoctor(Doctor doctor) throws SQLException {
         String query = "INSERT INTO doctors (FirstName, LastName, SpecializationId, Address, BirthDate,PhoneNumber,Email,Password,Salt) VALUES (?, ?, ?, ?, ?, ?,?,?,?)"; 
         try (Connection connection = DataBaseConnection.getConnection(); PreparedStatement statement = connection.prepareStatement(query)) {
@@ -112,6 +118,7 @@ public class AdminDao {
     
     
     //delete doctors
+    @Override
     public boolean deleteDoctor(int doctorId) throws SQLException {
     String query = "DELETE FROM doctors WHERE DoctorId = ?";
     try (Connection connection = DataBaseConnection.getConnection(); PreparedStatement statement = connection.prepareStatement(query)) {
@@ -122,6 +129,7 @@ public class AdminDao {
 
     //edit doctor
     
+    @Override
     public boolean updateDoctor(Doctor doctor) throws SQLException {
     String query = "UPDATE doctors SET FirstName = ?, LastName = ?, Address = ?, BirthDate = ?, PhoneNumber = ?, Email = ?,SpecializationId = ? WHERE DoctorId = ?";
     try (Connection connection = DataBaseConnection.getConnection(); PreparedStatement statement = connection.prepareStatement(query)) {
@@ -137,7 +145,8 @@ public class AdminDao {
     }
 }
     //getalldoctor
-    public List<Doctor> getAllDoctors() throws SQLException {
+    @Override
+    public List<Doctor> getAllDoctors()  throws SQLException {
      SpecializationController specializationController = new SpecializationController();
     List<Doctor> doctors = new ArrayList<>();
     String query = "SELECT * FROM doctors";

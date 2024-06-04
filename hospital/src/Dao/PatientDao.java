@@ -80,6 +80,7 @@ public class PatientDao implements IDaopatient {
         } 
         return null;
     }
+    @Override
     public boolean deletePatient(int patientId) throws SQLException {
         String query = "DELETE FROM patients WHERE PatientId = ?";
 

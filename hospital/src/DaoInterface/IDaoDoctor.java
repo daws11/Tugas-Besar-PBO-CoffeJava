@@ -8,7 +8,7 @@ import java.security.NoSuchAlgorithmException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import model.Doctor;
-import model.Patient;
+
 
 /**
  *

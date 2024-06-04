@@ -231,7 +231,12 @@ public class ListDoctor extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        
         if (selectedRowIndex != -1) {
+            
+            int response = JOptionPane.showConfirmDialog(null, "are you sure want to delete this account?", "Confirm",
+                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if (response == JOptionPane.YES_OPTION) {
             try {
                 int doctorId = (int) jTable1.getValueAt(selectedRowIndex, 0);
                 // TODO add your handling code here:
@@ -247,6 +252,8 @@ public class ListDoctor extends javax.swing.JFrame {
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
+        }
+            
         }
 
     }//GEN-LAST:event_jButton2ActionPerformed
