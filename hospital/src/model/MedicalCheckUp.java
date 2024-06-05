@@ -14,9 +14,9 @@ public class MedicalCheckUp {
     private int medicalCheckUpId;
     private LocalDate date;
     private String noteMedicalCheckUp;
-    private Appoiment appoiment;
+    private Appointment appoiment;
 
-    public MedicalCheckUp(int medicalCheckUpId, LocalDate date, String noteMedicalCheckUp, Appoiment appoiment) {
+    public MedicalCheckUp(int medicalCheckUpId, LocalDate date, String noteMedicalCheckUp, Appointment appoiment) {
         this.medicalCheckUpId = medicalCheckUpId;
         this.date = date;
         this.noteMedicalCheckUp = noteMedicalCheckUp;
@@ -35,7 +35,7 @@ public class MedicalCheckUp {
         return noteMedicalCheckUp;
     }
 
-    public Appoiment getAppoiment() {
+    public Appointment getAppoiment() {
         return appoiment;
     }
 
@@ -51,7 +51,7 @@ public class MedicalCheckUp {
         this.noteMedicalCheckUp = noteMedicalCheckUp;
     }
 
-    public void setAppoiment(Appoiment appoiment) {
+    public void setAppoiment(Appointment appoiment) {
         this.appoiment = appoiment;
     }
     

@@ -8,7 +8,7 @@ import Dao.DoctorDao;
 import controller.DoctorController;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
-import model.Appoiment;
+import model.Appointment;
 import model.Doctor;
 
 /**
@@ -16,7 +16,7 @@ import model.Doctor;
  * @author kevin
  */
 public class test extends javax.swing.JDialog {
-List<Appoiment> appoiments;
+List<Appointment> appoiments;
 Doctor doctor;
     /**
      * Creates new form test
@@ -146,10 +146,10 @@ Doctor doctor;
             }
         });
     }
-    private void loadTable(List<Appoiment> appoiments) {
+    private void loadTable(List<Appointment> appoiments) {
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         model.setRowCount(0);
-        for (Appoiment appoiment : appoiments) {
+        for (Appointment appoiment : appoiments) {
             Object[] rowData = new Object[]{
                 appoiment.getAppointmentId(),
                 appoiment.getStart(),

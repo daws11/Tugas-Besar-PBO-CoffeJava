@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import model.Appoiment;
+import model.Appointment;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -112,8 +112,8 @@ public class DoctorDao implements IDaoDoctor {
         }
     }
     
-    public  List<Appoiment> viewAppointmentListDoctor(int doctorId) {
-        List<Appoiment> appointments = new ArrayList<>();
+    public  List<Appointment> viewAppointmentListDoctor(int doctorId) {
+        List<Appointment> appointments = new ArrayList<>();
         String query = "SELECT * FROM appoiments WHERE doctorId = ?";
         
         try (Connection connection = DataBaseConnection.getConnection();
@@ -132,7 +132,7 @@ public class DoctorDao implements IDaoDoctor {
                     int roomId = resultSet.getInt("RoomId");
                     LocalDate date = resultSet.getDate("Date").toLocalDate();
 
-                    Appoiment appointment = new Appoiment(appointmentId, start, end, status, isCompleted, capacity, roomId, doctorId, date);
+                    Appointment appointment = new Appointment(appointmentId, start, end, status, isCompleted, capacity, roomId, doctorId, date);
                     appointments.add(appointment);
                 }
             }
