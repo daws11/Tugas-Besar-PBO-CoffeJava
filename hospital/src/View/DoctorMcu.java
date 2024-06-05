@@ -4,15 +4,18 @@
  */
 package View;
 
+import Dao.DoctorDao;
 import controller.DoctorController;
 import controller.MedicalCheckupController;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import model.Doctor;
+import model.Patient;
 
 /**
  *
@@ -25,25 +28,32 @@ public class DoctorMcu extends javax.swing.JFrame {
     private Doctor Identity = null;
     private int patient_id;
 
-    public void printPatientWithDoctor(int id) {
-        ResultSet patient = new DoctorController().viewPatientWithDoctor(id);
-        try {
-            while (patient.next()) {
-                listPatientDoctor.addElement(patient.getString("FirstName"));
-            }
-            jList1.setModel(listPatientDoctor);
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
+    public void printPatientWithDoctor(int id, int appoimentId) {
+        
+        DoctorDao doctorDao = new DoctorDao();
+        List<Patient> patients = doctorDao.getAppoimPatients(appoimentId);
+        for (Patient patient : patients) {
+            System.out.println("Patient ID: " + patient.getPatientId());
+            System.out.println("Name: " + patient.getFirstName() + " " + patient.getLastName());
+            System.out.println("Address: " + patient.getAddress());
+            System.out.println("Birth Date: " + patient.getBirtDate());
+            System.out.println("Gender: " + patient.getGender());
+            System.out.println("Blood Type: " + patient.getBloodType());
+            System.out.println("---------------------------");
+            listPatientDoctor.addElement(patient.getFirstName());
         }
+        jList1.setModel(listPatientDoctor);
+        
+       
     }
 
     /**
      * Creates new form DoctorMcu
      */
-    public DoctorMcu(Doctor identity) {
+    public DoctorMcu(Doctor identity, int appoimentId) {
         Identity = identity;
         initComponents();
-        printPatientWithDoctor(identity.getDoctorId());
+        printPatientWithDoctor(identity.getDoctorId(), appoimentId);
 //        System.out.println(identity.getEmail());
         jList1.addListSelectionListener(new ListSelectionListener() {
             @Override
@@ -181,7 +191,7 @@ public class DoctorMcu extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        new MedicalCheckupController().createMcu(dateField.getText(), noteField.getText(), resultField.getText(), Identity.getDoctorId(), patient_id);
+        new MedicalCheckupController().createMcu(dateField.getText(), noteField.getText(), resultField.getText(), Identity.getDoctorId(), patient_id, 1);
         dateField.setText("");
         noteField.setText("");
         resultField.setText("");
@@ -218,7 +228,7 @@ public class DoctorMcu extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new DoctorMcu(null).setVisible(true);
+                new DoctorMcu(null,0).setVisible(true);
             }
         });
     }

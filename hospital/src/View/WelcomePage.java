@@ -240,7 +240,7 @@ public class WelcomePage extends javax.swing.JFrame {
                     DoctorDashBoard doctorDashBoard = new DoctorDashBoard(doctor);
                     doctorDashBoard.setLocationRelativeTo(null);
                     doctorDashBoard.setVisible(true);
-                    this.dispose();
+                    
                 }
             } catch (SQLException ex) {
                 System.out.println(ex.getMessage());

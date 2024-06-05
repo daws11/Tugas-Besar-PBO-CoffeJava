@@ -15,7 +15,7 @@ public class MedicalCheckupController {
     public MedicalCheckupController() {
         medicalDao = new MedicalCheckupDao();
     }
-    public void createMcu(String date, String note, String result, int doctor_id, int patient_id) {
-        this.medicalDao.createMcu(date, note, result, doctor_id, patient_id);
+    public void createMcu(String date, String note, String result, int doctor_id, int patient_id, int appoimentId) {
+        this.medicalDao.createMcu(date, note, result, doctor_id, patient_id, appoimentId);
     }
 }

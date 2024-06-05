@@ -295,9 +295,9 @@ public class ChangePasswword extends javax.swing.JFrame {
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
-            DoctorDashBoard testingDockterMenu = new DoctorDashBoard(doctor);
-            testingDockterMenu.setLocationRelativeTo(null);
-            testingDockterMenu.setVisible(true);
+            //DoctorDashBoard testingDockterMenu = new DoctorDashBoard(doctor);
+            //testingDockterMenu.setLocationRelativeTo(null);
+           // testingDockterMenu.setVisible(true);
             this.dispose();
         }
 
@@ -364,9 +364,9 @@ public class ChangePasswword extends javax.swing.JFrame {
             patientMenu.setLocationRelativeTo(null);
             patientMenu.setVisible(true);
         } else if(user instanceof Doctor){
-            DoctorDashBoard doctorDashBoard = new DoctorDashBoard((Doctor)user);
-            doctorDashBoard.setLocationRelativeTo(null);
-            doctorDashBoard.setVisible(true);
+            //DoctorDashBoard doctorDashBoard = new DoctorDashBoard((Doctor)user);
+            //doctorDashBoard.setLocationRelativeTo(null);
+            //doctorDashBoard.setVisible(true);
         }
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed

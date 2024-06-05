@@ -5,6 +5,7 @@
 package hospital;
 
 import Dao.AdminDao;
+import Dao.DoctorDao;
 import View.WelcomePage;
 import controller.AdminController;
 import controller.DoctorController;
@@ -39,6 +40,7 @@ public class Hospital {
         WelcomePage welcomePage = new WelcomePage();
         welcomePage.setLocationRelativeTo(null);
         welcomePage.setVisible(true);
+        
         
         
         

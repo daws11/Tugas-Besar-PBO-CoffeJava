@@ -3,27 +3,6 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/View/DoctorMcu.java</file>
-            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/View/ChangePasswword.java</file>
-            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/View/PatientProfile.java</file>
-            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/View/AddDoctor.java</file>
-            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/model/Specialization.java</file>
-            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/Dao/AdminDao.java</file>
-            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/controller/SpecializationController.java</file>
-            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/Dao/PatientDao.java</file>
-            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/View/SpecializationGUI.java</file>
-            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/database/DataBaseConnection.java</file>
-            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/View/MySchedule.java</file>
-            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/View/Register.java</file>
-            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/testingKevin/TestingAdminMenu.java</file>
-            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/DaoInterface/IDaoDoctor.java</file>
-            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/controller/AdminController.java</file>
-            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/DaoInterface/IDaoMedicalCheckup.java</file>
-            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/Dao/SpecializationDao.java</file>
-            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/View/DoctorSchedule.java</file>
-            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/View/WelcomePage.java</file>
-        </group>
-        <group>
             <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/controller/DoctorController.java</file>
             <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/View/ChangePasswword.java</file>
             <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/View/AddDoctor.java</file>
@@ -45,6 +24,42 @@
             <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/View/Schedule.java</file>
             <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/View/DoctorMcu.java</file>
             <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/DashBoard/PatientMenu.java</file>
+            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/View/PatientProfile.java</file>
+            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/model/Specialization.java</file>
+            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/Dao/AdminDao.java</file>
+            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/DashBoard/AdminDashBoard.java</file>
+            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/View/MySchedule.java</file>
+            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/View/ListDoctor.java</file>
+            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/View/Register.java</file>
+            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/Dao/MedicalCheckupDao.java</file>
+            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/View/WelcomePage.java</file>
+        </group>
+        <group>
+            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/controller/DoctorController.java</file>
+            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/View/ChangePasswword.java</file>
+            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/View/AddDoctor.java</file>
+            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/hospital/Hospital.java</file>
+            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/controller/SpecializationController.java</file>
+            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/Dao/DoctorDao.java</file>
+            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/View/EditAdmin.java</file>
+            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/DaoInterface/IDaopatient.java</file>
+            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/Dao/PatientDao.java</file>
+            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/View/SpecializationGUI.java</file>
+            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/database/DataBaseConnection.java</file>
+            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/View/AddAdmin.java</file>
+            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/View/EditDoctor.java</file>
+            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/controller/PatientController.java</file>
+            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/model/Admin.java</file>
+            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/DaoInterface/IDaoDoctor.java</file>
+            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/DashBoard/DoctorDashBoard.java</file>
+            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/controller/AdminController.java</file>
+            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/DaoInterface/IDaoMedicalCheckup.java</file>
+            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/Dao/SpecializationDao.java</file>
+            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/View/DoctorSchedule.java</file>
+            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/View/Schedule.java</file>
+            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/View/DoctorMcu.java</file>
+            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/DashBoard/PatientMenu.java</file>
+            <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/DaoInterface/IDaoAdmin.java</file>
             <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/View/PatientProfile.java</file>
             <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/model/Specialization.java</file>
             <file>file:/D:/tugas-besar%20pbo%20coffejava/ver5/Tugas-Besar-PBO-CoffeJava/hospital/src/Dao/AdminDao.java</file>

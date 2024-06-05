@@ -10,8 +10,8 @@ import database.DataBaseConnection;
  * @author Admin
  */
 public class MedicalCheckupDao {
-     public void createMcu(String date, String note, String result, int doctor_id, int patient_id) {
-        String query = "INSERT INTO medicalcheckups (date, NoteMedicalChekup, Result, DoctorId, PatientId) VALUES (?, ?, ?, ?, ?)";
+     public void createMcu(String date, String note, String result, int doctor_id, int patient_id, int appoimentId) {
+        String query = "INSERT INTO medicalcheckups (date, NoteMedicalChekup, Result, DoctorId, PatientId, AppoimentId) VALUES (?, ?, ?, ?, ?,?)";
         try (Connection connection = DataBaseConnection.getConnection();
              PreparedStatement statement = connection.prepareStatement(query)) {
 
@@ -20,6 +20,7 @@ public class MedicalCheckupDao {
             statement.setString(3, result);
             statement.setInt(4, doctor_id);
             statement.setInt(5, patient_id);
+            statement.setInt(6, appoimentId);
 
             statement.executeUpdate();
         } catch (SQLException e) {

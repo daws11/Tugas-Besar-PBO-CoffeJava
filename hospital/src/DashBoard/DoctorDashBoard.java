@@ -5,7 +5,9 @@
 package DashBoard;
 
 import View.ChangePasswword;
+import View.DoctorMcu;
 import View.WelcomePage;
+import View.test;
 import model.Doctor;
 
 /**
@@ -14,11 +16,13 @@ import model.Doctor;
  */
 public class DoctorDashBoard extends javax.swing.JFrame {
     Doctor doctor;
+   
     /**
      * Creates new form TestingDockterMenu
      */
     public DoctorDashBoard(Doctor doctor) {
         this.doctor= doctor;
+        
         initComponents();
         
     }
@@ -37,6 +41,7 @@ public class DoctorDashBoard extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jToggleButton2 = new javax.swing.JToggleButton();
+        jToggleButton3 = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -80,6 +85,13 @@ public class DoctorDashBoard extends javax.swing.JFrame {
             }
         });
 
+        jToggleButton3.setText("menu");
+        jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -93,7 +105,8 @@ public class DoctorDashBoard extends javax.swing.JFrame {
                             .addComponent(jToggleButton1)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(14, 14, 14)
-                                .addComponent(jLabel3))))
+                                .addComponent(jLabel3))
+                            .addComponent(jToggleButton3)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(194, 194, 194)
                         .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -108,7 +121,9 @@ public class DoctorDashBoard extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addGap(18, 18, 18)
                 .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 169, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jToggleButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
                 .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -131,6 +146,14 @@ public class DoctorDashBoard extends javax.swing.JFrame {
         welcomePage.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jToggleButton2ActionPerformed
+
+    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
+        // TODO add your handling code here:]
+        test doctorMcu = new test(this, rootPaneCheckingEnabled, doctor);
+        doctorMcu.setLocationRelativeTo(null);
+        doctorMcu.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jToggleButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -171,5 +194,6 @@ public class DoctorDashBoard extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton2;
+    private javax.swing.JToggleButton jToggleButton3;
     // End of variables declaration//GEN-END:variables
 }
