@@ -14,16 +14,15 @@ public class DataBaseConnection {
     private static final String url = "jdbc:mysql://127.0.0.1:3306/hospitalpbo"; 
     private static final String user = "root";
     private static final String password = "";
-    private static Connection conn;
     
     public static Connection getConnection(){
-
+        Connection connection = null;
         try {
-            conn = DriverManager.getConnection(url, user, password);
+            connection = DriverManager.getConnection(url, user, password);
             
         } catch (Exception e) {
             System.err.println("Failed to connect to the database.");
         }
-        return conn;
+        return connection;
     }
 }

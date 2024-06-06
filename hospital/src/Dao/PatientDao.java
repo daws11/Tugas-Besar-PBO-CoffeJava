@@ -14,6 +14,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.security.NoSuchAlgorithmException;
 import DaoInterface.IDaopatient;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -24,7 +28,7 @@ public class PatientDao implements IDaopatient {
     @Override
     public boolean registerPatient(Patient patient)  throws SQLException  {
         String query = "INSERT INTO patients (FirstName, LastName, Email, PhoneNumber, Password, Salt, Address, BirthDate, GenderName, bloodType) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        
+        boolean failled = false;
         try (Connection connection = DataBaseConnection.getConnection(); PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setString(1, patient.getFirstName());
             statement.setString(2, patient.getLastName());
@@ -39,7 +43,7 @@ public class PatientDao implements IDaopatient {
             
 
             return statement.executeUpdate() > 0;
-        }
+        } 
     }
 
     public Patient loginPatient(String email, String password) throws SQLException, NoSuchAlgorithmException {
@@ -66,9 +70,95 @@ public class PatientDao implements IDaopatient {
                             storedPassword,
                             salt
                     );
+                } else {
+                     JOptionPane.showMessageDialog(null, "wrong password");
+                }
+            }else{
+                 JOptionPane.showMessageDialog(null, "email not found");
+            }
+            connection.close();
+        } 
+        return null;
+    }
+    @Override
+    public boolean deletePatient(int patientId) throws SQLException {
+        String query = "DELETE FROM patients WHERE PatientId = ?";
+
+        try (Connection connection = DataBaseConnection.getConnection(); PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setInt(1, patientId);
+            return statement.executeUpdate() > 0;
+        }
+    }
+
+    public boolean updatePatient(Patient patient) throws SQLException {
+        String query = "UPDATE patients SET FirstName = ?, LastName = ?, Email = ?, PhoneNumber = ?, Address = ?, BirthDate = ?, GenderName = ?, bloodType = ? WHERE PatientId = ?";
+
+        try (Connection connection = DataBaseConnection.getConnection(); PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setString(1, patient.getFirstName());
+            statement.setString(2, patient.getLastName());
+            statement.setString(3, patient.getEmail());
+            statement.setString(4, patient.getPhoneNumber());
+            
+            statement.setString(5, patient.getAddress());
+            statement.setDate(6, java.sql.Date.valueOf(patient.getBirtDate()));
+            statement.setString(7, patient.getGender());
+            statement.setString(8, patient.getBloodType());
+            statement.setInt(9, patient.getPatientId());
+
+            return statement.executeUpdate() > 0;
+        }
+    }
+
+    public Patient getPatientById(int patientId) throws SQLException {
+        String query = "SELECT * FROM patients WHERE PatientId = ?";
+
+        try (Connection connection = DataBaseConnection.getConnection(); PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setInt(1, patientId);
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (resultSet.next()) {
+                    String firstName = resultSet.getString("FirstName");
+                    String lastName = resultSet.getString("LastName");
+                    String email = resultSet.getString("Email");
+                    String phoneNumber = resultSet.getString("PhoneNumber");
+                    String password = resultSet.getString("Password");
+                    String salt = resultSet.getString("Salt");
+                    String address = resultSet.getString("Address");
+                    LocalDate birthDate = resultSet.getDate("BirthDate").toLocalDate();
+                    String gender = resultSet.getString("GenderName");
+                    String bloodType = resultSet.getString("bloodType");
+
+                    return new Patient(patientId,address,birthDate,gender,bloodType,firstName,lastName,email,phoneNumber,password,salt);
                 }
             }
         }
+
         return null;
     }
+
+    public List<Patient> getAllPatients() throws SQLException {
+        List<Patient> patients = new ArrayList<>();
+        String query = "SELECT * FROM patients";
+
+        try (Connection connection = DataBaseConnection.getConnection(); PreparedStatement statement = connection.prepareStatement(query); ResultSet resultSet = statement.executeQuery()) {
+            while (resultSet.next()) {
+                int patientId = resultSet.getInt("PatientId");
+                String firstName = resultSet.getString("FirstName");
+                String lastName = resultSet.getString("LastName");
+                String email = resultSet.getString("Email");
+                String phoneNumber = resultSet.getString("PhoneNumber");
+                String password = resultSet.getString("Password");
+                String salt = resultSet.getString("Salt");
+                String address = resultSet.getString("Address");
+                LocalDate birthDate = resultSet.getDate("BirthDate").toLocalDate();
+                String gender = resultSet.getString("GenderName");
+                String bloodType = resultSet.getString("bloodType");
+
+                Patient patient = new Patient(patientId,address,birthDate,gender,bloodType,firstName,lastName,email,phoneNumber,password,salt);
+                patients.add(patient);
+            }
+        }
+
+        return patients;
+    }
 }
+

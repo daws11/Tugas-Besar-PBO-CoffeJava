@@ -3,7 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package hospital;
-import View.LoginPatientView;
+
+import Dao.AdminDao;
+import Dao.DoctorDao;
+import View.WelcomePage;
+import controller.AdminController;
 import controller.DoctorController;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -12,8 +16,15 @@ import database.DataBaseConnection;
 import java.sql.SQLException;
 import controller.PatientController;
 import java.security.NoSuchAlgorithmException;
-import view.*;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
+import model.Admin;
+import model.Doctor;
+import model.Patient;
+
 import util.PasswordUtil;
+import view.SpecializationGUI;
 
 
 /**
@@ -26,29 +37,10 @@ public class Hospital {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws NoSuchAlgorithmException {
-        PatientController patientController = new PatientController();
-        DoctorController doctorController = new DoctorController();
-<<<<<<< Updated upstream
-        //LoginPatientView loginPatientView = new LoginPatientView(patientController);
-        //loginPatientView.setVisible(true);
-=======
+        WelcomePage welcomePage = new WelcomePage();
+        welcomePage.setLocationRelativeTo(null);
+        welcomePage.setVisible(true);
         
-        //RegisterPatientView registerPatientView =new RegisterPatientView(patientController);
-        //LoginPatientView loginPatientView = new LoginPatientView(patientController);
-        //loginPatientView.setVisible(true);
-        //registerPatientView.setVisible(true);
->>>>>>> Stashed changes
-        
-        LoginDoctorView loginDoctorView =  new LoginDoctorView();
-        loginDoctorView.setVisible(true);
-        //String password = "y8YKzJJBkmmm4H3ctRkwGRnIxgI4znjVAe/C6y/7MaW+WwXu9IFhtn40LvHQmiZqp2/Hnm7cvturmxtfS/7reA==";
-        //String salt = "IqBt6cBEpPV0WMG3BI5nvg==";
-        //String hashPassword = PasswordUtil.hashPassword(password, salt);
-        
-        //System.out.println(salt);
-        //System.out.println(hashPassword);
-        
-        //System.out.println(PasswordUtil.comparePassword(password, hashPassword, salt));
         
         
         

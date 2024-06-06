@@ -8,6 +8,7 @@ import model.Patient;
 import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.List;
 import util.PasswordUtil;
 /**
  *
@@ -28,4 +29,22 @@ public class PatientController {
     public Patient login(String email, String password) throws SQLException, NoSuchAlgorithmException {
         return patientDao.loginPatient(email, password);
     }
+     public boolean deletePatient(int patientId) throws SQLException {
+        return patientDao.deletePatient(patientId);
+    }
+
+    public boolean updatePatient(int patientId, String firstName, String lastName, String email, String phoneNumber, String address, LocalDate birthDate, String gender, String bloodType) throws SQLException {
+        Patient patient = new Patient(patientId,address,birthDate,gender,bloodType,firstName,lastName,email,phoneNumber,null,null);
+        return patientDao.updatePatient(patient);
+    }
+
+    public Patient getPatientById(int patientId) throws SQLException {
+        return patientDao.getPatientById(patientId);
+    }
+
+    public List<Patient> getAllPatients() throws SQLException {
+        return patientDao.getAllPatients();
+    }
+
+    
 }
