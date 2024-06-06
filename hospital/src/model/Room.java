@@ -9,40 +9,47 @@ package model;
  * @author kevin
  */
 public class Room {
-    private int id;
-    private String nama;
-    private int lantai;
-    private int no;
+    private int RoomId;
+    private String RoomName;
+    private int RoomFloor;
+    private int RoomNumber;
 
-    public int getId() {
-        return id;
+    public int getRoomId() {
+        return RoomId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setRoomId(int RoomId) {
+        this.RoomId = RoomId;
     }
 
-    public String getNama() {
-        return nama;
+    public String getRoomName() {
+        return RoomName;
     }
 
-    public void setNama(String nama) {
-        this.nama = nama;
+    public void setRoomName(String RoomName) {
+        this.RoomName = RoomName;
     }
 
-    public int getLantai() {
-        return lantai;
+    public int getRoomFloor() {
+        return RoomFloor;
     }
 
-    public void setLantai(int lantai) {
-        this.lantai = lantai;
+    public void setRoomFloor(int RoomFloor) {
+        this.RoomFloor = RoomFloor;
     }
 
-    public int getNo() {
-        return no;
+    public int getRoomNumber() {
+        return RoomNumber;
     }
 
-    public void setNo(int no) {
-        this.no = no;
+    public void setRoomNumber(int RoomNumber) {
+        this.RoomNumber = RoomNumber;
+    }
+
+    public Room(int RoomId, String RoomName, int RoomFloor, int RoomNumber) {
+        this.RoomId = RoomId;
+        this.RoomName = RoomName;
+        this.RoomFloor = RoomFloor;
+        this.RoomNumber = RoomNumber;
     }
 }
