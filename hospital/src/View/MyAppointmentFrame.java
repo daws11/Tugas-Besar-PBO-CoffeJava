@@ -49,7 +49,7 @@ public class MyAppointmentFrame extends javax.swing.JFrame {
             this.myDao = new MyAppointmentDao();
             this.patient = patient;
             this.docAppDao = new DoctorAppointmentDao();
-            this.doctorAppointmentController = new DoctorAppointmentController(this);
+            this.doctorAppointmentController = new DoctorAppointmentController(null);
          
             DefaultTableModel tableModel = (DefaultTableModel) TableAppointment.getModel();
         try {
