@@ -6,6 +6,7 @@ package DaoInterface;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 import model.Doctor;
 import model.Patient;
 import model.Room;
@@ -18,8 +19,8 @@ import model.MyAppointment;
  */
 public interface IDaoMyPractices {
     
-    public List<Appointment> chooseAppointment(int doctorId) throws SQLException;
-    public List<Integer> seeMyPatient(int appointmentId) throws  SQLException;
-    public Patient getPatientData(int patientId) throws SQLException;
+    public List<Map<String, Object>> listMyPractices(int doctorId) throws SQLException;
+    public List<Map<String, Object>> seeMyPatient(int appointmentId) throws  SQLException;
+    public List<Map<String, Object>> getPatientData(int patientId) throws SQLException;
     
 }

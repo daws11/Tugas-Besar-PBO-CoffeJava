@@ -5,6 +5,8 @@
 package DaoInterface;
 
 import java.sql.SQLException;
+import java.util.List;
+import java.util.Map;
 import model.Doctor;
 import model.Room;
 import model.Appointment;
@@ -17,7 +19,6 @@ import model.Patient;
  */
 public interface IDaoMyAppointment {
     
-    public MyAppointment seeMyAppointment(int patientId) throws SQLException;
-    public Patient getPatientData(int patientId) throws SQLException;
+    public List<Map<String, Object>> seeMyAppointment(int patientId) throws SQLException;
     
 }

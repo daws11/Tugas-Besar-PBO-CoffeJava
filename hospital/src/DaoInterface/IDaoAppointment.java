@@ -18,8 +18,9 @@ public interface IDaoAppointment {
     
     public boolean addAppointment(Appointment appointment) throws SQLException;
     public boolean deleteAppointment(int appointmentId) throws SQLException;
-    public boolean updateAppointment(Appointment appointment) throws SQLException;
-    List<Appointment> printAppointment() throws SQLException;
+    public List<Appointment> printAppointment() throws SQLException;
     public Appointment getAppointmentById(int appointmentId) throws SQLException;
-    
+    public boolean updateIsCompleted ()throws SQLException;
+    public List<Room> printRoom() throws SQLException;
+    public boolean deleteMyAppointment(int appointmentId) throws SQLException;
 }
