@@ -128,7 +128,7 @@ public class DoctorDao implements IDaoDoctor {
                     LocalTime end = resultSet.getTime("TimeEnd").toLocalTime();
                     int status = resultSet.getInt("Status");
                     int isCompleted = resultSet.getInt("IsCompleted");
-                    int capacity = resultSet.getInt("Sapacity");
+                    int capacity = resultSet.getInt("Capacity");
                     int roomId = resultSet.getInt("RoomId");
                     LocalDate date = resultSet.getDate("Date").toLocalDate();
 

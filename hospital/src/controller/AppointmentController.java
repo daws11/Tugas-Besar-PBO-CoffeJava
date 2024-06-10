@@ -12,6 +12,7 @@ import java.time.LocalTime;
 import javax.swing.JOptionPane;
 import model.Appointment;
 import model.Doctor;
+import model.Room;
 import View.*;
 import java.sql.SQLException;
 
@@ -23,12 +24,13 @@ public class AppointmentController {
 
     AppointmentDao dao = new AppointmentDao();
     List<Doctor> listDoctor;
-    AppointmentView frameAppointment;
+    AppointmentFrame appointmentFrame;
     List<Appointment> listAppointments;
+    List<Room> listRoom;
     
 
-    public AppointmentController(AppointmentView frameAppointment) {
-        this.frameAppointment = frameAppointment;
+    public AppointmentController(AppointmentFrame appointmentFrame) {
+        this.appointmentFrame = appointmentFrame;
     }
 
     public void add(LocalTime start, LocalTime end, int status, int isDone, int cap, int room, int docId, LocalDate date) throws SQLException {
@@ -38,29 +40,29 @@ public class AppointmentController {
             return;
         }
         Appointment appointment = new Appointment(0, start, end, status, isDone, cap, room, docId, date);
-        dao.addAppointment(appointment);
-        JOptionPane.showMessageDialog(null, "Appointment added successfully");
+         try {
+            boolean isAdded = dao.addAppointment(appointment);
+            if (isAdded) {
+                JOptionPane.showMessageDialog(null, "Appointment added successfully");
+            } else {
+                JOptionPane.showMessageDialog(null, "Failed to add appointment");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Error while adding appointment: " + e.getMessage());
+        }
     }
 
     public void delete() throws SQLException {
-        int selectedAppointment = frameAppointment.getTableSchedule().getSelectedRow();
+        int selectedAppointment = appointmentFrame.getTableSchedule().getSelectedRow();
         if (selectedAppointment != -1) {
-            int haveId = (int) frameAppointment.getTableSchedule().getValueAt(selectedAppointment, 0);
+            int haveId = (int) appointmentFrame.getTableSchedule().getValueAt(selectedAppointment, 0);
             dao.deleteAppointment(haveId);
+            dao.deleteMyAppointment(haveId);
             JOptionPane.showMessageDialog(null, "Appointment deleted successfully");
         } else {
             JOptionPane.showMessageDialog(null, "Please select appointment from appointment table");
         }
-    }
-
-    public void update(LocalTime start, LocalTime end, int status, int isDone, int cap, int room, int docId, LocalDate date, int appointmentId) throws SQLException {
-            if (!start.isBefore(end)) {
-            JOptionPane.showMessageDialog(null, "Invalid Input");
-            return;
-            }
-            Appointment appointment = new Appointment(0, start, end, status, isDone, cap, room, docId, date);
-            dao.updateAppointment(appointment);
-            JOptionPane.showMessageDialog(null, "Appointment updated successfully");
     }
 
     public List<Appointment> getAllAppointment() throws SQLException{
@@ -69,5 +71,23 @@ public class AppointmentController {
     
     public Appointment getAppointment(int appointmentId) throws SQLException{
         return this.dao.getAppointmentById(appointmentId);
+    }
+    
+    public void updateIsCompleted() {
+        try {
+            boolean isUpdated = dao.updateIsCompleted();
+            if (isUpdated) {
+                JOptionPane.showMessageDialog(null, "Appointments updated successfully");
+            } else {
+                JOptionPane.showMessageDialog(null, "No appointments to update");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Error while updating appointments: " + e.getMessage());
+        }
+    }
+    
+    public List<Room> getAllRooms() throws SQLException {
+        return this.dao.printRoom();
     }
 }

@@ -9,7 +9,9 @@ import model.Doctor;
 import model.Room;
 import model.Patient;
 import model.Appointment;
+import model.MyAppointment;
 import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -18,7 +20,9 @@ import java.util.List;
 public interface IDaoDoctorAppointment {
     
     public Appointment getAppointmentById(int appointmentId) throws SQLException;
-    List<Appointment> searchDoctor(Appointment appointment) throws SQLException;
-    public boolean registerAppointment(int patientId) throws SQLException;
+    public boolean addMyAppointment(MyAppointment myappointment) throws SQLException;
+    public List<Map<String, Object>> getDetailedAppointments() throws SQLException;
+    public boolean notRegistered(int appointmentId, int patientId) throws SQLException;
+    public boolean isNotFull(int appointmentId) throws SQLException;
     
 }

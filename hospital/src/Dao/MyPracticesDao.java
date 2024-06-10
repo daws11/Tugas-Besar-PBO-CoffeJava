@@ -16,7 +16,10 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import model.Patient;
 
 /**
@@ -26,78 +29,105 @@ import model.Patient;
 public class MyPracticesDao implements IDaoMyPractices{
 
     @Override
-    public List<Appointment> chooseAppointment(int doctorId) throws SQLException {
-        String sql = "SELECT * FROM Appointment WHERE DoctorId = ?;";
-        List<Appointment> appointments = new ArrayList<>();
+    public List<Map<String, Object>> listMyPractices(int doctorId) throws SQLException {
+        String sql = "SELECT " +
+                "a.AppoimentId, " +
+                "a.Date, " +
+                "a.TimeStart AS Start, " +
+                "a.TimeEnd AS End, " +
+                "CONCAT('Floor ', r.RoomFloor, ' Number ', r.RoomNumber) AS Room " +
+                "FROM appoiments a " +
+                "JOIN rooms r ON a.RoomId = r.RoomId " +
+                "AND a.Date >= CURDATE() " +
+                "WHERE a.DoctorId = ? AND a.IsCompleted = 0 "
+                + "ORDER BY a.Date ASC;";
+
+        List<Map<String, Object>> appointmentList = new ArrayList<>();
 
         try (Connection connection = DataBaseConnection.getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setInt(1, doctorId);
-            ResultSet rs = statement.executeQuery();
-
-            while (rs.next()) {
-                int appointmentId = rs.getInt("AppointmentId");
-                LocalTime start = rs.getTime("Start").toLocalTime();
-                LocalTime end = rs.getTime("End").toLocalTime();
-                int status = rs.getInt("Status");
-                byte isCompleted = rs.getByte("IsCompleted");
-                int capacity = rs.getInt("Capacity");
-                int roomId = rs.getInt("RoomId");
-                LocalDate date = rs.getDate("Date").toLocalDate();
-
-                Appointment appointment = new Appointment(appointmentId, start, end, status, isCompleted, capacity, roomId, doctorId, date);
-                appointments.add(appointment);
+            try (ResultSet rs = statement.executeQuery()) {
+                while (rs.next()) {
+                    Map<String, Object> appointmentData = new HashMap<>();
+                    appointmentData.put("AppointmentId", rs.getInt("AppoimentId"));
+                    appointmentData.put("Date", rs.getDate("Date"));
+                    appointmentData.put("Start", rs.getTime("Start"));
+                    appointmentData.put("End", rs.getTime("End"));
+                    appointmentData.put("Room", rs.getString("Room"));
+                    appointmentList.add(appointmentData);
+                }
             }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new SQLException("Error while fetching detailed appointments: " + e.getMessage());
         }
-        return appointments;
+
+        return appointmentList;
     }
 
     @Override
-    public List<Integer> seeMyPatient(int appointmentId) throws SQLException {
-        List<Integer> patientIds = new ArrayList<>();
-    String sql = "SELECT PatientId FROM appoimentspatients WHERE appointmentId = ?;";
+    public List<Map<String, Object>> seeMyPatient(int appointmentId) throws SQLException {
+        List<Map<String, Object>> patientIds = new ArrayList<>();
+    String sql = "SELECT "
+            + "a.PatientId, "
+            + "CONCAT (p.FirstName, ' ', p.LastName) AS FullName "
+            + "FROM appoimentpatients a "
+            + "JOIN patients p ON a.PatientId = p.PatientId "
+            + "WHERE appoimentId = ?;";
 
-    try (Connection connection = DataBaseConnection.getConnection();
-         PreparedStatement statement = connection.prepareStatement(sql)) {
-        statement.setInt(1, appointmentId);
-        ResultSet rs = statement.executeQuery();
-
-        while (rs.next()) {
-            int patientId = rs.getInt("PatientId");
-            patientIds.add(patientId);
+        try (Connection connection = DataBaseConnection.getConnection(); 
+             PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setInt(1, appointmentId);
+            try (ResultSet rs = statement.executeQuery()) {
+                while (rs.next()) {
+                Map<String, Object> listPatient = new HashMap<>();
+                listPatient.put("PatientId", rs.getInt("PatientId"));
+                listPatient.put("PatientName", rs.getString("FullName"));
+                patientIds.add(listPatient);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new SQLException("Error while retrieving patient IDs: " + e.getMessage());
         }
-    } catch (SQLException e) {
-        e.printStackTrace();
-        throw new SQLException("Error while retrieving patient IDs: " + e.getMessage());
-    }
 
-    return patientIds;
+        return patientIds;
     }
 
     @Override
-    public Patient getPatientData(int patientId) throws SQLException {
-        Patient patient = null;
-        String sql = "SELECT * FROM Patient WHERE patientId = ?;";
-        
+    public List<Map<String, Object>> getPatientData(int patientId) throws SQLException {
+        String sql = "SELECT " +
+                     "PatientId, FirstName, LastName, GenderName, BirthDate, Address, PhoneNumber, Email, BloodType " +
+                     "FROM patients " +
+                     "WHERE PatientId = ?";
+
+        List<Map<String, Object>> patientDataList = new ArrayList<>();
+
         try (Connection connection = DataBaseConnection.getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setInt(1, patientId);
-            ResultSet rs = statement.executeQuery();
-
-            if (rs.next()) {
-                int id = rs.getInt("PatientId");
-                String first = rs.getString("firstName");
-                String last = rs.getString("lastName");
-                String address = rs.getString("Address");
-                String PhoneNumber = rs.getString("PhoneNumber");
-                String Email = rs.getString("Email");
-                
+            try (ResultSet rs = statement.executeQuery()) {
+                if (rs.next()) {
+                    Map<String, Object> patientData = new HashMap<>();
+                    patientData.put("PatientId", rs.getInt("PatientId"));
+                    patientData.put("FirstName", rs.getString("FirstName"));
+                    patientData.put("LastName", rs.getString("LastName"));
+                    patientData.put("GenderName", rs.getString("GenderName"));
+                    patientData.put("BirthDate", rs.getDate("BirthDate"));
+                    patientData.put("Address", rs.getString("Address"));
+                    patientData.put("PhoneNumber", rs.getString("PhoneNumber"));
+                    patientData.put("Email", rs.getString("Email"));
+                    patientData.put("BloodType", rs.getString("BloodType"));
+                    patientDataList.add(patientData);
+                }
             }
         } catch (SQLException e) {
             e.printStackTrace();
             throw new SQLException("Error while retrieving patient details: " + e.getMessage());
         }
-        return patient;
+
+        return patientDataList;
     }
     
 }
