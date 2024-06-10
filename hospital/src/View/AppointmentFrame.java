@@ -127,8 +127,9 @@ public class AppointmentFrame extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(0, 51, 102));
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Appointment");
+        jLabel1.setText("Appointment Management");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -198,6 +199,7 @@ public class AppointmentFrame extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(TableRoom);
 
+        ButtonAdd.setBackground(new java.awt.Color(139, 207, 255));
         ButtonAdd.setText("    Add    ");
         ButtonAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -205,6 +207,7 @@ public class AppointmentFrame extends javax.swing.JFrame {
             }
         });
 
+        ButtonRemove.setBackground(new java.awt.Color(139, 207, 255));
         ButtonRemove.setText("  Remove  ");
         ButtonRemove.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -212,6 +215,7 @@ public class AppointmentFrame extends javax.swing.JFrame {
             }
         });
 
+        ButtonClear.setBackground(new java.awt.Color(139, 207, 255));
         ButtonClear.setText("     Clear    ");
         ButtonClear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -219,6 +223,7 @@ public class AppointmentFrame extends javax.swing.JFrame {
             }
         });
 
+        ButtonBack.setBackground(new java.awt.Color(139, 207, 255));
         ButtonBack.setText("Back");
         ButtonBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -257,7 +262,7 @@ public class AppointmentFrame extends javax.swing.JFrame {
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(ButtonAdd, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
                             .addComponent(ButtonRemove, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -314,7 +319,8 @@ public class AppointmentFrame extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        pack();
+        setSize(new java.awt.Dimension(1134, 582));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void ButtonAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAddActionPerformed

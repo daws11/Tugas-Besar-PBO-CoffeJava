@@ -108,7 +108,8 @@ public class AdminDashboard extends javax.swing.JFrame {
                 .addContainerGap(211, Short.MAX_VALUE))
         );
 
-        pack();
+        setSize(new java.awt.Dimension(1055, 454));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
