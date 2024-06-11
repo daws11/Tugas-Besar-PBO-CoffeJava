@@ -15,7 +15,7 @@ import model.Specialization;
 import util.PasswordUtil;
 
 /**
- *
+ *d
  * @author kevin
  */
 public class AdminController {
