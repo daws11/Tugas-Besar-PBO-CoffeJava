@@ -43,9 +43,9 @@ public class RoomGUI extends javax.swing.JFrame {
                         statement.setString(1, roomName);
                         ResultSet rs = statement.executeQuery();
                         if (rs.next()) {
-                            jLabel6.setText(rs.getString("RoomName"));
-                            jLabel7.setText(Integer.toString(rs.getInt("RoomFloor")));
-                            jLabel8.setText(Integer.toString(rs.getInt("RoomNumber")));
+                            jLabel7.setText(rs.getString("RoomName"));
+                            jLabel8.setText(Integer.toString(rs.getInt("RoomFloor")));
+                            jLabel9.setText(Integer.toString(rs.getInt("RoomNumber")));
                         }
                     } catch (SQLException ex) {
                         ex.printStackTrace();
@@ -176,7 +176,7 @@ public class RoomGUI extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel6)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jLabel9))
+                                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel4)
@@ -228,7 +228,7 @@ public class RoomGUI extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel6)
-                                    .addComponent(jLabel9))
+                                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(52, 52, 52)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jButton1)
