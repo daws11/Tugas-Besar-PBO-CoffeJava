@@ -8,40 +8,51 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import DaoInterface.IDaoRoom;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author LENOVO
  */
-public class RoomDao {
-        public boolean addRoom(String roomName, int roomFloor, int roomNumber) throws SQLException {
-        String query = "INSERT INTO rooms (RoomName, RoomFloor, RoomNumber) VALUES (?, ?, ?)";
-        try (Connection connection = DataBaseConnection.getConnection(); 
-             PreparedStatement statement = connection.prepareStatement(query)) {
-            statement.setString(1, roomName);
-            statement.setInt(2, roomFloor);
-            statement.setInt(3, roomNumber);
-            return statement.executeUpdate() > 0;
-        }
-    }
-        
-            public boolean updateRoom(String oldRoomName, String newRoomName, int newRoomFloor, int newRoomNumber) throws SQLException {
-        String query = "UPDATE rooms SET RoomName = ?, RoomFloor = ?, RoomNumber = ? WHERE RoomName = ?";
-        try (Connection connection = DataBaseConnection.getConnection(); 
-             PreparedStatement statement = connection.prepareStatement(query)) {
-            statement.setString(1, newRoomName);
-            statement.setInt(2, newRoomFloor);
-            statement.setInt(3, newRoomNumber);
-            statement.setString(4, oldRoomName);
-            return statement.executeUpdate() > 0;
-        }
-    }
-        public boolean deleteRoom(String roomName) throws SQLException {
-        String query = "DELETE FROM rooms WHERE RoomName = ?";
-        try (Connection connection = DataBaseConnection.getConnection(); 
-             PreparedStatement statement = connection.prepareStatement(query)) {
-            statement.setString(1, roomName);
-            return statement.executeUpdate() > 0;
-        }
-    }
+public class RoomDao implements IDaoRoom{
+
+    public void editData(String roomname, String roomfloor, String roomnumber, String oldRoom) {
+           try (Connection conn = DataBaseConnection.getConnection()) {
+               String sql = "UPDATE rooms SET RoomName = ?, RoomFloor = ?, RoomNumber = ? WHERE RoomName = ?";
+               PreparedStatement stmt = conn.prepareStatement(sql);
+               stmt.setString(1, roomname);
+               stmt.setString(2, roomfloor);
+               stmt.setString(3, roomnumber);
+               stmt.setString(4, oldRoom);
+               int rowsUpdated = stmt.executeUpdate();
+               if (rowsUpdated > 0) {
+                   JOptionPane.showMessageDialog(null, "Room details updated successfully!");
+                   stmt.close();
+               } else {
+                   JOptionPane.showMessageDialog(null, "Room not found. No updates made.");
+               }
+           } catch (SQLException e) {
+               JOptionPane.showMessageDialog(null, "Error updating room details: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+           }
+       }
+
+       public void addData(String roomname, String roomfloor, String roomnumber) {
+           try (Connection conn = DataBaseConnection.getConnection()) {
+               String sql = "INSERT INTO rooms (RoomName, RoomFloor, RoomNumber) VALUES (?, ?, ?)";
+               PreparedStatement stmt = conn.prepareStatement(sql);
+               stmt.setString(1, roomname);
+               stmt.setString(2, roomfloor);
+               stmt.setString(3, roomnumber);
+               int rowsInserted = stmt.executeUpdate();
+               if (rowsInserted > 0) {
+                   JOptionPane.showMessageDialog(null, "Room added successfully!");
+               } else {
+                   JOptionPane.showMessageDialog(null, "Failed to add room.");
+               }
+           } catch (SQLException e) {
+               JOptionPane.showMessageDialog(null, "Error adding room: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+           }
+       }
         
 }

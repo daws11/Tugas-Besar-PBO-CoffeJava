@@ -16,15 +16,14 @@ public class RoomController {
         this.roomDao = new RoomDao();
     }
 
-    public boolean addRoom(String roomName, int roomFloor, int roomNumber) throws SQLException {
-        return roomDao.addRoom(roomName, roomFloor, roomNumber);
+    public void editRoom(String roomname, String roomfloor, String roomnumber, String oldRoom) {
+        roomDao.editData(roomname, roomfloor, roomnumber, oldRoom);
     }
 
-    public boolean updateRoom(String roomName, String newRoomName, int newRoomFloor, int newRoomNumber) throws SQLException {
-        return roomDao.updateRoom(roomName, newRoomName, newRoomFloor, newRoomNumber);
-    }
-
-    public boolean deleteRoom(String roomName) throws SQLException {
-        return roomDao.deleteRoom(roomName);
+    public void addRoom(String roomname, String roomfloor, String roomnumber) {
+        roomDao.addData(roomname, roomfloor, roomnumber);
     }
 }
+
+    
+
