@@ -19,39 +19,6 @@
             <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/model/Room.java</file>
             <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/View/EditDoctor.java</file>
             <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/View/RoomGUI.java</file>
-            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/DaoInterface/IDaopatient.java</file>
-            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/controller/PatientController.java</file>
-            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/database/DataBaseConnection.java</file>
-            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/model/MedicalCheckUp.java</file>
-            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/controller/RoomController.java</file>
-            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/model/Specialization.java</file>
-            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/Dao/RoomDao.java</file>
-            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/model/Doctor.java</file>
-            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/model/User.java</file>
-            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/controller/DoctorController.java</file>
-            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/model/Patient.java</file>
-            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/View/EditDoctorSchedule.java</file>
-            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/Dao/SpecializationDao.java</file>
-            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/View/AddDoctor.java</file>
-            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/View/AppointmentFrame.java</file>
-        </group>
-        <group>
-            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/View/ChangePasswword.java</file>
-            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/View/Register.java</file>
-            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/View/AddEditRoomDialog.java</file>
-            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/Dao/DoctorDao.java</file>
-            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/util/PasswordUtil.java</file>
-            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/View/AdminDashboard.java</file>
-            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/DaoInterface/IDaoDoctor.java</file>
-            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/View/SpecializationGUI.java</file>
-            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/hospital/Hospital.java</file>
-            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/View/AddAdmin.java</file>
-            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/Dao/PatientDao.java</file>
-            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/View/EditAdmin.java</file>
-            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/model/MyAppointment.java</file>
-            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/model/Room.java</file>
-            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/View/EditDoctor.java</file>
-            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/View/RoomGUI.java</file>
             <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/View/WelcomePage.java</file>
             <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/DaoInterface/IDaopatient.java</file>
             <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/controller/PatientController.java</file>
@@ -69,6 +36,62 @@
             <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/Dao/SpecializationDao.java</file>
             <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/View/AddDoctor.java</file>
             <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/View/AppointmentFrame.java</file>
+        </group>
+        <group>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/DashBoard/AdminDashBoard.java</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/Dao/DoctorDao.java</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/View/AdminDashboard.java</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/DaoInterface/IDaoDoctor.java</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/hospital/Hospital.java</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/View/AddAdmin.java</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/DaoInterface/IDaoMyPractices.java</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/View/EditAdmin.java</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/model/Room.java</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/View/EditDoctor.java</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/DaoInterface/IDaopatient.java</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/DaoInterface/IDaoRoom.java</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/database/Test.java</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/model/MedicalCheckUp.java</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/DaoInterface/IDaoMyAppointment.java</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/View/PatientProfile.java</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/controller/MyPracticesController.java</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/Dao/RoomDao.java</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/View/MyPracticesFrame.java</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/View/DoctorAppointmentFrame.java</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/DaoInterface/IDaoDoctorAppointment.java</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/View/ListDoctor.java</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/View/AppointmentFrame.java</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/View/ChangePasswword.java</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/DaoInterface/IDaoSpecialization.java</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/View/Register.java</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/DaoInterface/IDaoMedicalCheckup.java</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/View/AddEditRoomDialog.java</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/util/PasswordUtil.java</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/View/SpecializationGUI.java</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/controller/MedicalCheckupController.java</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/Dao/PatientDao.java</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/Dao/MyAppointmentDao.java</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/model/MyAppointment.java</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/View/DoctorMcu.java</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/controller/SpecializationController.java</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/View/RoomGUI.java</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/View/WelcomePage.java</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/Dao/MyPracticesDao.java</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/controller/PatientController.java</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/controller/DoctorAppointmentController.java</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/database/DataBaseConnection.java</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/controller/RoomController.java</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/model/Specialization.java</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/Images/output-onlinepngtools%20(1).png</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/controller/AppointmentController.java</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/model/Doctor.java</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/model/User.java</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/controller/DoctorController.java</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/model/Patient.java</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/DashBoard/PatientMenu.java</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/View/EditDoctorSchedule.java</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/Dao/SpecializationDao.java</file>
+            <file>file:/C:/Users/LENOVO/Downloads/skool%20tugas/Semester%204/PBO/tp/Group/Kevin%20version/ver%202/Tugas-Besar-PBO-CoffeJava/hospital/src/View/AddDoctor.java</file>
         </group>
     </open-files>
 </project-private>
