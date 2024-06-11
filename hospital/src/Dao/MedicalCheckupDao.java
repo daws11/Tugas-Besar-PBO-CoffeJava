@@ -11,6 +11,7 @@ import database.DataBaseConnection;
  */
 public class MedicalCheckupDao {
      public void createMcu(String date, String note, String result, int doctor_id, int patient_id, int appoimentId) {
+         System.out.println("anjay" + appoimentId);
         String query = "INSERT INTO medicalcheckups (date, NoteMedicalChekup, Result, DoctorId, PatientId, AppoimentId) VALUES (?, ?, ?, ?, ?,?)";
         try (Connection connection = DataBaseConnection.getConnection();
              PreparedStatement statement = connection.prepareStatement(query)) {
