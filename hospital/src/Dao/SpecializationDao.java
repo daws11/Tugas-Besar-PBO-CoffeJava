@@ -16,7 +16,7 @@ import java.util.List;
 public class SpecializationDao implements IDaoSpecialization{
    Connection connection;
     private final String insert = "INSERT INTO specializations (Name, Description) VALUES (?,?);";
-    private final String update = "UPDATE specializations set Name=?, Description=?, WHERE SpecializationId=?; ";
+    private final String update = "UPDATE specializations set Name=?, Description=? WHERE SpecializationId=?; ";
     private final String delete = "DELETE FROM specializations where SpecializationId=?; ";
     private final String select = "SELECT * FROM specializations;";
     private final String selectbyId = "SELECT * FROM specializations WHERE SpecializationId=?";

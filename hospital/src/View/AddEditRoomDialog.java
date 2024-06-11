@@ -10,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import Dao.RoomDao;
 /**
  *
  * @author LENOVO
@@ -19,14 +20,19 @@ public class AddEditRoomDialog extends javax.swing.JDialog {
     /**
      * Creates new form AddEditRoomDialog
      */
+    private final RoomDao roomDao;
+    
     String RoomName = null;
     boolean isAdd;
+    
+    
     
     public AddEditRoomDialog(java.awt.Frame parent, boolean modal, Connection conn, String RoomName, boolean isAdd) {
         super(parent, modal);
         initComponents();
         this.RoomName = RoomName;
         this.isAdd = isAdd;
+        roomDao = new RoomDao();
         
         if (!isAdd) {
             try {
@@ -41,7 +47,6 @@ public class AddEditRoomDialog extends javax.swing.JDialog {
                 jTextField3.setText(String.valueOf(rs.getInt("RoomNumber")));
             }
             
-            editData();
         } catch (SQLException e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this, "Error loading room details: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
@@ -112,6 +117,7 @@ public class AddEditRoomDialog extends javax.swing.JDialog {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
+        jButton1.setBackground(new java.awt.Color(139, 207, 255));
         jButton1.setText("Save");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -174,60 +180,15 @@ public class AddEditRoomDialog extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void editData(){
-            String roomname = jTextField1.getText();
-            String roomfloor = jTextField2.getText();
-            String roomnumber = jTextField3.getText();
-            
-            
-            try(Connection conn = DataBaseConnection.getConnection()){
-                String sql = "UPDATE rooms SET RoomName = ?, RoomFloor = ?, RoomNumber = ? WHERE RoomName = ?";
-                PreparedStatement stmt = conn.prepareStatement(sql);
-                stmt.setString(1, roomname);
-                stmt.setString(2, roomfloor);
-                stmt.setString(3, roomnumber);
-                stmt.setString(4, this.RoomName);
-                int rowsUpdated = stmt.executeUpdate();
-            if (rowsUpdated > 0) {
-                JOptionPane.showMessageDialog(this, "Room details updated successfully!");
-                } else {
-                    JOptionPane.showMessageDialog(this, "Room not found. No updates made.");
-                }
-            } catch (SQLException e) {
-                JOptionPane.showMessageDialog(this, "Error updating room details: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-            }
-    }
-    
-    private void addData(){
-        String roomname = jTextField1.getText();
-        String roomfloor = jTextField2.getText();
-        String roomnumber = jTextField3.getText();
-
-        try (Connection conn = DataBaseConnection.getConnection()) {
-            String sql = "INSERT INTO rooms (RoomName, RoomFloor, RoomNumber) VALUES (?, ?, ?)";
-            PreparedStatement stmt = conn.prepareStatement(sql);
-            stmt.setString(1, roomname);
-            stmt.setString(2, roomfloor);
-            stmt.setString(3, roomnumber);
-            int rowsInserted = stmt.executeUpdate();
-            if (rowsInserted > 0) {
-                JOptionPane.showMessageDialog(this, "Room added successfully!");
-            } else {
-                JOptionPane.showMessageDialog(this, "Failed to add room.");
-            }
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(this, "Error adding room: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-        }
-    }
-    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         
         if(isAdd){
-            addData();
+            roomDao.addData(jTextField1.getText(), jTextField2.getText(), jTextField3.getText());
         } else {
-            editData();
+            roomDao.editData(jTextField1.getText(), jTextField2.getText(), jTextField3.getText(), RoomName);
         }
+        dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
